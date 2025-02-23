@@ -1,0 +1,208 @@
+/* mediaqueries.css */
+/* For tablets */
+@media (max-width: 1024px) {
+    body {
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+    
+    .home, .about {
+        padding: 0 5%; /* Less padding on the sides */
+    }
+    .home-content, .about-content {
+        max-width: 100%; /* Use full width on smaller screens */
+        padding: 20px; /* Add padding around the content */
+    }
+    .home-img{
+        width: 300px; /* Smaller images on smaller screens */
+        height: 300px;
+    }
+    .about-img{
+        width: 160px;  /* Increased from 200px */
+        height: 160px;  /* Ensure the width and height are the same to maintain the circle */
+        border-radius: 50%; /* Allows precise positioning */
+        top: -10%;  /* Center vertically in the section */
+        left: 50%;  /* Move to the right; adjust as necessary */
+        transform: translate(-50%, -50%);  /* Centers the image at the specified top and left values */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);  /* Enhances the depth with a shadow */
+        z-index: 2;  
+    }
+    .experience-content{
+        margin-top: 30px;
+    }
+
+    .project-boxes {
+        grid-template-columns: 1fr; /* Stack project boxes on smaller screens */
+    }
+    .nav-experience a {
+        font-size: 16px; /* Smaller font size for better fit */
+        padding: 10px; /* Increase padding for easier touch */
+    }
+    .boxes-container, .skills-container, .work-container {
+        flex-direction: column; /* Stack the boxes for better vertical layout */
+        align-items: center; /* Center align the boxes */
+    }
+    .education-box, .skills-box, .work-box {
+        width: 90%; /* Increase width to utilize more space */
+        margin: 10px 0; /* Add space between stacked boxes */
+    }
+    .navbar{
+        text-align: left;
+        margin-left: -20px;
+        text-indent: 20px;
+    }
+    .home-img {
+        width: 160px;  /* Increased from 200px */
+        height: 160px;  /* Ensure the width and height are the same to maintain the circle */
+        border-radius: 50%; /* Allows precise positioning */
+        top: 20%;  /* Center vertically in the section */
+        left: 75%;  /* Move to the right; adjust as necessary */
+        transform: translate(-50%, -50%);  /* Centers the image at the specified top and left values */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);  /* Enhances the depth with a shadow */
+        z-index: 2;  /* Keeps the image above other content */
+    }
+    
+
+
+    .hamburger i {
+        padding: 10px;
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar links when active */
+    }
+     /* Ensure the header and navbar are responsive */
+     .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Wrap the navbar items to fit on small screens */
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    /* For the About Section - make it take the full width */
+    .about {
+        flex-direction: column;
+        padding: 20px; /* Adjust padding for smaller screens */
+        height: auto; /* Allow the height to auto-adjust */
+    }
+
+    
+
+    .about-content {
+        width: 100%; /* Use full width of the screen */
+        max-width: 100%; /* Ensure no limit on the width */
+        margin: 0 auto; /* Center the content */
+        padding: 10px; /* Reduce padding for smaller screens */
+        text-align: justify; /* Keep the text justified */
+    }
+
+    .about-content h1 {
+        font-size: 36px; /* Reduce heading size for mobile screens */
+    }
+
+    .about-content h3 {
+        font-size: 24px; /* Smaller sub-heading */
+    }
+
+    .about-content p {
+        font-size: 14px; /* Adjust paragraph size for mobile readability */
+    }
+
+    /* Ensure the footer is responsive */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-sci {
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    
+    .about {
+        padding: 1px;
+        flex-direction: column; /* Stack image and content */
+    }
+
+
+    .about-content {
+        width: 100%;
+        padding: 20px;
+        text-align: justify;
+    }
+
+    .about-content h1 {
+        font-size: 48px;
+    }
+
+    .about-content h3 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+    .nav-experience a {
+        font-size: 14px; /* Even smaller font size for mobile */
+        padding: 8px; /* Comfortable padding for touch */
+    }
+    .education-box, .skills-box, .work-box {
+        padding: 15px; /* Adjust padding to be proportionate on smaller screens */
+        text-align: center; /* Center text for better aesthetics */
+    }
+    .experience-content, .projects-content {
+        padding: 10px; /* Reduce padding to fit content within smaller viewport */
+    }
+    .experience h1, .projects h1 {
+        font-size: 24px; /* Reduce heading size for space efficiency */
+    }
+    .header {
+        flex-direction: column; /* Stack logo and navigation */
+        padding: 10px; /* Smaller padding */
+    }
+    .logo {
+        margin-bottom: 10px; /* Space between logo and navigation */
+    }
+    .navbar {
+        width: 100%; /* Full width navigation */
+        justify-content: center; /* Center navigation links */
+    }
+    .btn-box {
+        flex-direction: column; /* Stack buttons */
+        align-items: center;
+    }
+    .btn-box a {
+        width: 100%; /* Full width buttons */
+        margin-top: 10px; /* Space between buttons */
+    }
+    .footer-content {
+        flex-direction: column; /* Stack footer content */
+        text-align: center;
+    }
+    .footer-sci {
+        margin-top: 10px; /* Space between text and social icons in footer */
+    }
+    .nav-experience {
+        display: flex;
+        justify-content: center; /* Horizontally center the links */
+       /* Ensure it doesn't wrap to a new row */
+    }
+
+    
+}
+/* CSS to show boxes-container when #education-link is hovered */
+
+
+/* You might want to add other styles depending on your design needs */
