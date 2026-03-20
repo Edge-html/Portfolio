@@ -1,3 +1,4 @@
+//script.js
 document.addEventListener('DOMContentLoaded', function() {
   const sections = document.querySelectorAll('.section'); 
   const links = document.querySelectorAll('.nav-experience a'); 
