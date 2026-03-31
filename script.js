@@ -111,3 +111,25 @@ window.addEventListener('scroll', function() {
     }
 });
 
+function openModal(title, role, desc, imagesArray) {
+    const modal = document.getElementById("projectModal");
+    const gallery = document.getElementById("modalGallery");
+    
+    // Clear previous images
+    gallery.innerHTML = "";
+
+    // Fill Text
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalRole").innerText = role;
+    document.getElementById("modalDesc").innerText = desc;
+
+    // Loop through the image names and create elements
+    imagesArray.forEach(imgName => {
+        const img = document.createElement("img");
+        img.src = `images/${imgName}.jpg`; // Assumes they are .jpg
+        img.className = "gallery-img";
+        gallery.appendChild(img);
+    });
+
+    modal.style.display = "block";
+}

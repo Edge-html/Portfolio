@@ -235,12 +235,22 @@
                             <div class="timeline-content">
                                 <h3>Institute of Computer Engineers of the Philippines</h3>
                                 <div class="badges">
-                                    <span class="badge"><i class='bx bx-crown'></i> Director of Technicals</span>
-                                    <span class="badge"><i class='bx bx-calendar'></i> Aug 2024 - Present</span>
+                                    <span class="badge"><i class='bx bx-crown'></i>Treasurer</span>
+                                    <span class="badge"><i class='bx bx-calendar'></i> Aug 2025 - Present</span>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Institute of Computer Engineers of the Philippines</h3>
+                                <div class="badges">
+                                    <span class="badge"><i class='bx bx-id-card'></i> Director of Technicals</span>
+                                    <span class="badge"><i class='bx bx-calendar'></i> Aug 2024 - Present</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
@@ -268,66 +278,76 @@
             <p>_______________________________________________</p>
             <p>This is all of my projects from my 1st Year to my 4th Year.</p>
                 
-                <div class="project-boxes">
-                    <div class="project-box">
-                        <h4>DeepLabv3+ for Brain Tumor Segmentation</h4>
-                        <p1>Role: Testing</p1>
-                        <p>Focused on medical imaging precision, this study implements a modified DeepLabv3+ architecture to automate brain tumor boundary analysis. The project compares optimization strategies like Adam and SGD, utilizing Atrous Spatial Pyramid Pooling (ASPP) and Focal Tversky Loss to achieve a significant 140% improvement in Dice Coefficient.</p>
-                        <div class="badges">
-                            <span class="badge"><i class='bx bxl-python'></i></span>
-                            <span class="badge"><i class='bx bx-brain'></i></span>
+            <div class="project-boxes">
+                        <div class="project-box" onclick="openModal('DeepLabv3+ for Brain Tumor Segmentation', 'Model Validation', 'This study implements a modified DeepLabv3+ architecture to automate brain tumor boundary analysis, achieving a 140% improvement in Dice Coefficient using ASPP and Focal Tversky Loss.', 'images/brain_tumor.jpg')">
+                            <h4>DeepLabv3+ for Brain Tumor Segmentation</h4>
+                            <p1>Role: Model Validation</p1>
+                            <p>Focused on medical imaging precision, this study implements a modified DeepLabv3+ architecture to automate brain tumor boundary analysis...</p>
+                            <div class="badges">
+                                <span class="badge"><i class='bx bxl-python'></i></span>
+                                <span class="badge"><i class='bx bx-brain'></i></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="project-box">
-                        <h4>AI-Powered Coral Health Assessment</h4>
-                        <p1>Role: Testing</p1>
-                        <p>This project features a two-stage deep learning framework designed to automate the monitoring of Philippine coral reefs. By integrating a U-Net model for semantic segmentation and EfficientNet-B0 for health classification, the system identifies bleaching with 82% accuracy, providing a scalable solution for conservation.</p>
-                        <div class="badges">
-                            <span class="badge"><i class='bx bxl-python'></i></span>
-                            <span class="badge"><i class='bx bx-analyse'></i></span>
+                        <div class="project-box" onclick="openModal('AI-Powered Coral Health Assessment', 'Machine Learning Model Developer', 'A two-stage deep learning framework using U-Net for semantic segmentation and EfficientNet-B0 for health classification to monitor Philippine coral reefs with 82% accuracy.', 'images/coral_reef.jpg')">
+                            <h4>AI-Powered Coral Health Assessment</h4>
+                            <p1>Role: Machine Learning Model Developer</p1>
+                            <p>This project features a two-stage deep learning framework designed to automate the monitoring of Philippine coral reefs...</p>
+                            <div class="badges">
+                                <span class="badge"><i class='bx bxl-python'></i></span>
+                                <span class="badge"><i class='bx bx-analyse'></i></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="project-box">
-                        <h4>Lazy Eye's Music Studio</h4>
-                        <p1>Role: Lead Programmer</p1>
-                        <p>Lazy Eye's Record is a recording or rehearsing studio made for musicians who want to record or rehearse their talents in music. Not only do they rent music studio, but they rent or sell musical instruments, and offers tutorials for voice, guitar, piano, and drums.</p>
-                        <div class="badges">
-                            <span class="badge"><i class='bx bxl-python'></i></span>
+                        <div class="project-box" onclick="openModal('Color Vision Deficiency Screening System', 'Lead Researcher / Hardware Programmer', 'A handheld ESP32-based system that displays Ishihara plates on an IPS TFT screen. It matches user keypad input against reference tables to identify red-green deficiencies with 95.6% accuracy.', 'images/color_vision.jpg')">
+                            <h4>Color Vision Deficiency Screening System</h4>
+                            <p1>Role: Lead Researcher / Hardware Programmer</p1>
+                            <p>This research outlines a handheld, portable color vision test system using an ESP32 and IPS TFT screen. [cite: 13, 14]</p>
+                            <div class="badges">
+                                <span class="badge"><i class='bx bx-chip'></i></span>
+                                <span class="badge"><i class='bx bx-scan'></i></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="project-box">
-                        <h4>The Fall of John Paul</h4>
-                        <p1>Role: Frontend/Graphic Designer</p1>
-                        <p>“The Fall of John Paul” is a game about a once simple man to a fallen, defeated student, whose one sole objective is to reach his goal to graduate by defeating the enemies and obstacles standing in his way!</p>
-                        <div class="badges">
-                            <span class="badge"><i class='bx bxl-java'></i></span>
-                            <span class="badge"><i class='bx bxl-c-plus-plus'></i></span>
+                        <div class="project-box" onclick="openModal('Lazy Eye\'s Music Studio', 'Lead Programmer', 'A management system for a recording and rehearsing studio that handles instrument rentals, sales, and tutorial scheduling for voice and various instruments.', 'images/music_studio.jpg')">
+                            <h4>Lazy Eye's Music Studio</h4>
+                            <p1>Role: Lead Programmer</p1>
+                            <p>Lazy Eye's Record is a recording or rehearsing studio made for musicians who want to record or rehearse their talents in music...</p>
+                            <div class="badges">
+                                <span class="badge"><i class='bx bxl-python'></i></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="project-box">
-                        <h4>Sakay Ta!</h4>
-                        <p1>Role: Lead Programmer</p1>
-                        <p>Sakay Ta! is an application that offers transportation services like cars/taxi, motorcycles, and tricycles that lets you transport from one place to another all over Mindanao.</p>
-                        <div class="badges">
-                            <span class="badge"><i class='bx bx-code-block'></i></span>
-                            <span class="badge"><i class='bx bxs-data'></i></span>
+                        <div class="project-box" onclick="openModal('The Fall of John Paul', 'Frontend/Graphic Designer', 'A narrative-driven game about a student overcoming obstacles and enemies to reach graduation, featuring custom graphic designs and frontend mechanics.', 'images/game_project.jpg')">
+                            <h4>The Fall of John Paul</h4>
+                            <p1>Role: Frontend/Graphic Designer</p1>
+                            <p>“The Fall of John Paul” is a game about a once simple man to a fallen, defeated student...</p>
+                            <div class="badges">
+                                <span class="badge"><i class='bx bxl-java'></i></span>
+                                <span class="badge"><i class='bx bxl-c-plus-plus'></i></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="project-box">
-                        <h4>Presensya</h4>
-                        <p1>Role: Lead Programmer</p1>
-                        <p>Presensya is a Computer Laboratory Attendance Tracker that allows students in MMCM to easily track their attendance record and record their attendance with a single tap of their IDs to an RFID scanner.</p>
-                        <div class="badges">
-                            <span class="badge"><i class='bx bx-rfid'></i></span>
-                            <span class="badge"><i class='bx bxs-data'></i></span>
+                        <div class="project-box" onclick="openModal('Sakay Ta!', 'Lead Programmer', 'A transportation service application tailored for Mindanao, offering car, taxi, motorcycle, and tricycle bookings through an integrated database system.', 'images/sakay_ta.jpg')">
+                            <h4>Sakay Ta!</h4>
+                            <p1>Role: Lead Programmer</p1>
+                            <p>Sakay Ta! is an application that offers transportation services like cars/taxi, motorcycles, and tricycles...</p>
+                            <div class="badges">
+                                <span class="badge"><i class='bx bx-code-block'></i></span>
+                                <span class="badge"><i class='bx bxs-data'></i></span>
+                            </div>
                         </div>
-                    </div>
-                </div>
+
+                        <div class="project-box" onclick="openModal('Presensya', 'Lead Programmer', 'An IoT-based attendance tracker for computer laboratories. It uses RFID technology to allow students to log their attendance with a simple tap of their ID cards.', 'images/presensya.jpg')">
+                            <h4>Presensya</h4>
+                            <p1>Role: Lead Programmer</p1>
+                            <p>Presensya is a Computer Laboratory Attendance Tracker that allows students in MMCM to easily track their attendance record...</p>
+                            <div class="badges">
+                                <span class="badge"><i class='bx bx-rfid'></i></span>
+                                <span class="badge"><i class='bx bxs-data'></i></span>
+                            </div>
+                        </div>
+            </div>
                                 
             
         </div>
@@ -335,7 +355,18 @@
         
     </section>
     <script src="script.js"></script>
-    
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p1 id="modalRole" style="display:block; margin: 10px 0; font-weight:bold;"></p1>
+            
+            <div id="modalGallery" class="modal-gallery">
+                </div>
+
+            <p id="modalDesc"></p>
+        </div>
+    </div>
 </body>
 <footer>
     <div class="footer-content animate-footer">
