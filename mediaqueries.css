@@ -1,208 +1,546 @@
-/* mediaqueries.css */
-/* For tablets */
-@media (max-width: 1024px) {
-    body {
-        padding: 0 10px; /* Adjust padding for smaller screens */
-    }
-    
-    .home, .about {
-        padding: 0 5%; /* Less padding on the sides */
-    }
-    .home-content, .about-content {
-        max-width: 100%; /* Use full width on smaller screens */
-        padding: 20px; /* Add padding around the content */
-    }
-    .home-img{
-        width: 300px; /* Smaller images on smaller screens */
-        height: 300px;
-    }
-    .about-img{
-        width: 160px;  /* Increased from 200px */
-        height: 160px;  /* Ensure the width and height are the same to maintain the circle */
-        border-radius: 50%; /* Allows precise positioning */
-        top: -10%;  /* Center vertically in the section */
-        left: 50%;  /* Move to the right; adjust as necessary */
-        transform: translate(-50%, -50%);  /* Centers the image at the specified top and left values */
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);  /* Enhances the depth with a shadow */
-        z-index: 2;  
-    }
-    .experience-content{
-        margin-top: 30px;
-    }
+/* ============================================================
+   MEDIAQUERIES.CSS — Mobile-First Responsive Overrides
+   Breakpoints:
+     Base (Mobile-first) : < 480px
+     sm  (Large Mobile)  : 481px  – 600px
+     md  (Tablet)        : 601px  – 900px
+     lg  (Laptop)        : 901px  – 1200px
+     xl  (Desktop)       : > 1200px  ← default (Main.css)
+   ============================================================ */
 
-    .project-boxes {
-        grid-template-columns: 1fr; /* Stack project boxes on smaller screens */
-    }
-    .nav-experience a {
-        font-size: 16px; /* Smaller font size for better fit */
-        padding: 10px; /* Increase padding for easier touch */
-    }
-    .boxes-container, .skills-container, .work-container {
-        flex-direction: column; /* Stack the boxes for better vertical layout */
-        align-items: center; /* Center align the boxes */
-    }
-    .education-box, .skills-box, .work-box {
-        width: 90%; /* Increase width to utilize more space */
-        margin: 10px 0; /* Add space between stacked boxes */
-    }
-    .navbar{
-        text-align: left;
-        margin-left: -20px;
-        text-indent: 20px;
-    }
-    .home-img {
-        width: 160px;  /* Increased from 200px */
-        height: 160px;  /* Ensure the width and height are the same to maintain the circle */
-        border-radius: 50%; /* Allows precise positioning */
-        top: 20%;  /* Center vertically in the section */
-        left: 75%;  /* Move to the right; adjust as necessary */
-        transform: translate(-50%, -50%);  /* Centers the image at the specified top and left values */
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);  /* Enhances the depth with a shadow */
-        z-index: 2;  /* Keeps the image above other content */
-    }
-    
-
-
-    .hamburger i {
-        padding: 10px;
-    }
-
-    .navbar.active {
-        display: flex; /* Show navbar links when active */
-    }
-     /* Ensure the header and navbar are responsive */
-     .header {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; /* Wrap the navbar items to fit on small screens */
-    }
-
-    .navbar a {
-        margin: 10px 0;
-        font-size: 16px; /* Adjust font size for smaller screens */
-    }
-
-    /* For the About Section - make it take the full width */
-    .about {
-        flex-direction: column;
-        padding: 20px; /* Adjust padding for smaller screens */
-        height: auto; /* Allow the height to auto-adjust */
-    }
-
-    
-
-    .about-content {
-        width: 100%; /* Use full width of the screen */
-        max-width: 100%; /* Ensure no limit on the width */
-        margin: 0 auto; /* Center the content */
-        padding: 10px; /* Reduce padding for smaller screens */
-        text-align: justify; /* Keep the text justified */
-    }
-
-    .about-content h1 {
-        font-size: 36px; /* Reduce heading size for mobile screens */
-    }
-
-    .about-content h3 {
-        font-size: 24px; /* Smaller sub-heading */
-    }
-
-    .about-content p {
-        font-size: 14px; /* Adjust paragraph size for mobile readability */
-    }
-
-    /* Ensure the footer is responsive */
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-sci {
-        margin-top: 10px;
-        justify-content: center;
-    }
+/* ============================================================
+   HAMBURGER BUTTON — Hidden on Desktop
+   ============================================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  cursor: pointer;
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+  z-index: 1100;
+  flex-shrink: 0;
 }
 
-/* For mobile phones */
-@media (max-width: 768px) {
-    
-    .about {
-        padding: 1px;
-        flex-direction: column; /* Stack image and content */
-    }
-
-
-    .about-content {
-        width: 100%;
-        padding: 20px;
-        text-align: justify;
-    }
-
-    .about-content h1 {
-        font-size: 48px;
-    }
-
-    .about-content h3 {
-        font-size: 28px;
-    }
-
-    .about-content p {
-        font-size: 16px;
-    }
-    .nav-experience a {
-        font-size: 14px; /* Even smaller font size for mobile */
-        padding: 8px; /* Comfortable padding for touch */
-    }
-    .education-box, .skills-box, .work-box {
-        padding: 15px; /* Adjust padding to be proportionate on smaller screens */
-        text-align: center; /* Center text for better aesthetics */
-    }
-    .experience-content, .projects-content {
-        padding: 10px; /* Reduce padding to fit content within smaller viewport */
-    }
-    .experience h1, .projects h1 {
-        font-size: 24px; /* Reduce heading size for space efficiency */
-    }
-    .header {
-        flex-direction: column; /* Stack logo and navigation */
-        padding: 10px; /* Smaller padding */
-    }
-    .logo {
-        margin-bottom: 10px; /* Space between logo and navigation */
-    }
-    .navbar {
-        width: 100%; /* Full width navigation */
-        justify-content: center; /* Center navigation links */
-    }
-    .btn-box {
-        flex-direction: column; /* Stack buttons */
-        align-items: center;
-    }
-    .btn-box a {
-        width: 100%; /* Full width buttons */
-        margin-top: 10px; /* Space between buttons */
-    }
-    .footer-content {
-        flex-direction: column; /* Stack footer content */
-        text-align: center;
-    }
-    .footer-sci {
-        margin-top: 10px; /* Space between text and social icons in footer */
-    }
-    .nav-experience {
-        display: flex;
-        justify-content: center; /* Horizontally center the links */
-       /* Ensure it doesn't wrap to a new row */
-    }
-
-    
+.hamburger:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
 }
-/* CSS to show boxes-container when #education-link is hovered */
 
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-text-primary);
+  border-radius: 2px;
+  transition: var(--transition-base);
+}
 
-/* You might want to add other styles depending on your design needs */
+/* Animated X state */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   LAPTOP — 901px to 1200px
+   Minor adjustments; layout stays mostly intact.
+   ============================================================ */
+@media (max-width: 1200px) {
+
+  /* Home image sits closer */
+  .home-img {
+    width: 380px;
+    height: 380px;
+    left: 175%;
+  }
+
+  /* About image: pull in slightly */
+  .about-img {
+    width: 320px;
+    height: 320px;
+  }
+
+  /* Project grid: 2 columns */
+  .project-boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Experience cards: allow wrapping */
+  .education-box {
+    flex-basis: calc(28% - var(--space-md));
+  }
+}
+
+/* ============================================================
+   TABLET — 601px to 900px
+   Two-column grids, images repositioned, nav condensed.
+   ============================================================ */
+@media (max-width: 900px) {
+
+  /* --- HEADER --- */
+  .header {
+    padding: 14px 24px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Dropdown mobile nav */
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(280px, 80vw);
+    height: 100vh;
+    background: rgba(6, 15, 26, 0.97);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-left: 1px solid var(--color-border-glass);
+    padding: 80px 32px 40px;
+    gap: var(--space-md);
+    z-index: 1050;
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.6);
+    transition: transform var(--transition-slow);
+    transform: translateX(100%);
+  }
+
+  .navbar.open {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .navbar a {
+    font-size: 16px;
+    margin-left: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border-glass);
+    color: var(--color-text-primary);
+  }
+
+  .navbar a:last-child {
+    border-bottom: none;
+  }
+
+  /* Nav overlay backdrop */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1040;
+    backdrop-filter: blur(2px);
+  }
+
+  .nav-overlay.open {
+    display: block;
+  }
+
+  /* --- HOME SECTION --- */
+  #home {
+    height: auto;
+    min-height: 100vh;
+    padding: 120px 6% 60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Image: remove absolute positioning, inline as flex item */
+  .home-img {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 220px;
+    height: 220px;
+    margin-bottom: var(--space-lg);
+    animation: heroFloat 8s ease-in-out infinite;
+  }
+
+  .home-content h1 {
+    font-size: clamp(32px, 6vw, 48px);
+  }
+
+  .home-content h3 {
+    font-size: clamp(15px, 3vw, 20px);
+  }
+
+  .home-content p {
+    font-size: 14px;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .home-sci {
+    justify-content: center;
+  }
+
+  .btn-box {
+    justify-content: center;
+    width: auto;
+  }
+
+  /* --- ABOUT SECTION --- */
+  #about {
+    padding: 80px 6%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .about-img {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: none;
+    width: 180px;
+    height: 180px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .about-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 32px 28px;
+  }
+
+  .about-content p {
+    text-align: left;
+  }
+
+  .about-content .btn-box {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* --- EXPERIENCE SECTION --- */
+  .experience-content {
+    padding: 0 var(--space-md);
+  }
+
+  .boxes-container,
+  .skills-container,
+  .work-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .education-box {
+    flex-basis: auto;
+    width: min(400px, 90%);
+  }
+
+  .skills-box,
+  .work-box {
+    flex-basis: auto;
+    width: min(500px, 90%);
+  }
+
+  /* --- PROJECT GRID --- */
+  .project-boxes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  /* --- BANANA CAT --- */
+  /* Push to bottom, smaller, lower z-index so it never covers content */
+  .banana-cat-track {
+    bottom: 10px;
+    z-index: 10;
+  }
+
+  .banana-cat {
+    width: 60px;
+    opacity: 0.6;
+  }
+
+  /* --- FOOTER --- */
+  .footer-content {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .footer-sci {
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   LARGE MOBILE — 481px to 600px
+   Tighten spacing, single column projects.
+   ============================================================ */
+@media (max-width: 600px) {
+
+  .project-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .home-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .home-content h1 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .home-content h3 {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  /* Experience pill nav: allow wrapping */
+  .nav-experience {
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+    padding: var(--space-xs);
+    width: auto;
+    max-width: 100%;
+  }
+
+  .nav-experience a {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+
+  /* Modal full-width on small screens */
+  .modal {
+    padding: 20px 12px;
+  }
+
+  .modal-content {
+    padding: 28px 20px;
+    width: 100%;
+    border-radius: var(--radius-lg);
+  }
+
+  #modalTitle {
+    font-size: clamp(17px, 5vw, 22px);
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+  }
+}
+
+/* ============================================================
+   MOBILE — up to 480px
+   Maximum simplification, hide banana cat, stack everything.
+   ============================================================ */
+@media (max-width: 480px) {
+
+  /* --- HEADER --- */
+  .header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  /* --- HOME SECTION --- */
+  #home {
+    padding: 100px 5% 48px;
+  }
+
+  .home-img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: var(--space-md);
+  }
+
+  .home-content h1 {
+    font-size: clamp(26px, 9vw, 36px);
+  }
+
+  .home-content h3 {
+    font-size: clamp(13px, 4.5vw, 16px);
+  }
+
+  .home-content p {
+    font-size: 13px;
+  }
+
+  .btn-box {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: var(--space-sm);
+  }
+
+  .btn-box a {
+    width: 100%;
+    height: 46px;
+    font-size: 13px;
+  }
+
+  /* --- ABOUT --- */
+  #about {
+    padding: 60px 5% 40px;
+  }
+
+  .about-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-content {
+    padding: 24px 16px;
+    gap: var(--space-md);
+  }
+
+  .about-content h1 {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .about-content h3 {
+    font-size: 16px;
+  }
+
+  .about-content p {
+    font-size: 13px;
+  }
+
+  /* --- EXPERIENCE SECTION --- */
+  .experience-content h1,
+  .projects-content h1 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .education-box,
+  .skills-box,
+  .work-box {
+    width: 100%;
+    min-width: unset;
+    padding: var(--space-md);
+  }
+
+  .education-box h2,
+  .skills-box h2,
+  .work-box h2 {
+    font-size: 14px;
+  }
+
+  /* Tighter badge layout */
+  .badges {
+    gap: 4px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  /* --- PROJECTS --- */
+  .project-boxes {
+    gap: var(--space-md);
+    padding: 0 var(--space-xs);
+  }
+
+  .project-box {
+    padding: var(--space-md);
+    min-height: 160px;
+  }
+
+  .project-box h4 {
+    font-size: 14px;
+  }
+
+  /* --- BANANA CAT: fully hidden on smallest screens --- */
+  .banana-cat-track {
+    display: none;
+  }
+
+  /* --- SOCIAL ICONS --- */
+  .home-sci a,
+  .footer-sci a {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  /* --- MODAL --- */
+  .modal {
+    padding: 12px 8px;
+  }
+
+  .modal-content {
+    padding: 20px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  #modalTitle {
+    font-size: 16px;
+    padding-right: 32px;
+  }
+
+  .modal-gallery {
+    padding: var(--space-sm);
+    gap: var(--space-xs);
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+  }
+
+  #modalDesc {
+    font-size: 13px;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .project-data-table th,
+  .project-data-table td {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+/* ============================================================
+   UTILITY: Nav close overlay (injected by JS)
+   ============================================================ */
+.nav-overlay {
+  cursor: pointer;
+}
