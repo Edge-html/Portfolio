@@ -506,11 +506,12 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch; /* Forces all boxes in a row to the same height */
   gap: var(--space-md);
   margin-top: var(--space-lg);
   padding: 0 var(--space-md);
+  width: 100%;
 }
-
 .education-box,
 .skills-box,
 .work-box {
@@ -529,6 +530,7 @@ body::before {
   min-width: 200px;
   flex-basis: calc(22% - var(--space-md));
 }
+
 
 .skills-box {
   min-width: 240px;
@@ -572,6 +574,22 @@ body::before {
   font-size: 13px;
   color: var(--color-text-secondary);
   line-height: 1.6;
+}
+#education.section.show {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the container vertically */
+    
+    /* FORCE THE TOTAL SECTION HEIGHT */
+    height: -39.8rem !important; 
+    min-height: -39.8rem !important;
+    max-height: -39.8rem !important;
+    
+    /* REMOVE EXCESS PADDING */
+    padding: 0 !important; 
+    margin: 20px 0; /* Add a small margin instead of padding */
+    overflow: hidden;
 }
 
 /* ============================================================
