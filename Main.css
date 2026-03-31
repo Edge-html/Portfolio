@@ -389,39 +389,132 @@ footer {
 .modal {
     display: none; 
     position: fixed;
-    z-index: 2000; 
-    left: 0; top: 0;
-    width: 100%; height: 100%;
+    z-index: 3000; /* Ensures it is above the header and banana cat */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
 }
 
 .modal-content {
     background-color: #081b29;
-    margin: 5% auto;
+    margin: 2% auto;
     padding: 30px;
     border: 2px solid rgb(41, 126, 206);
-    width: 80%; max-width: 800px;
+    width: 90%;
+    max-width: 800px;
     border-radius: 15px;
     text-align: center;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto; /* Allows scrolling if there are many images or long text */
     animation: zoomIn 0.3s ease;
 }
-
 @keyframes zoomIn {
     from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
-
 .close-modal {
-    position: absolute; right: 20px; top: 10px;
-    color: #fff; font-size: 30px; cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+.close-modal:hover {
+    color: rgb(41, 126, 206);
 }
 
-#modalImg {
-    width: 100%; max-height: 400px;
-    object-fit: contain; border-radius: 10px;
+/* --- GALLERY GRID --- */
+.modal-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* Aligns images to the center */
+    margin: 25px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2); /* Subtle contrast for the gallery area */
+    border-radius: 12px;
+}
+.gallery-img {
+    width: 180px;           /* Fixed smaller width */
+    height: 180px;          /* Fixed height for uniformity */
+    object-fit: contain;    /* Shows the whole image without cropping */
+    background-color: #112233; /* Darker background to fill gaps in transparent images */
+    border-radius: 8px;
+    border: 2px solid rgba(41, 126, 206, 0.3);
+    transition: all 0.3s ease;
+    padding: 5px;
 }
 
+.gallery-img:hover {
+    transform: scale(1.05);
+    border-color: rgb(41, 126, 206);
+    box-shadow: 0 0 15px rgba(41, 126, 206, 0.4);
+}
+
+#modalTitle {
+    font-size: 28px;
+    color: rgb(41, 126, 206);
+    margin-bottom: 5px;
+}
+
+#modalDesc {
+    font-size: 15px;
+    color: #cfd8dc;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0 10px;
+    border-left: 3px solid rgb(41, 126, 206); /* Adds a professional accent line */
+    margin-top: 20px;
+}
+.modal-table-container {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.table-heading {
+    color: rgb(41, 126, 206);
+    font-size: 1.1rem;
+    margin: 15px 0 10px 0;
+    border-bottom: 1px solid rgba(41, 126, 206, 0.3);
+    padding-bottom: 5px;
+}
+
+.project-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-data-table th {
+    background: rgba(41, 126, 206, 0.2);
+    color: rgb(41, 126, 206);
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid rgb(41, 126, 206);
+}
+
+.project-data-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #ededed;
+}
+
+.project-data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.project-data-table tr:hover {
+    background: rgba(41, 126, 206, 0.05);
+}
 .experience-content {
     text-align: center;
     max-width: 600px;

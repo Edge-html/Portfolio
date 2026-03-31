@@ -279,74 +279,103 @@
             <p>This is all of my projects from my 1st Year to my 4th Year.</p>
                 
             <div class="project-boxes">
-                        <div class="project-box" onclick="openModal('DeepLabv3+ for Brain Tumor Segmentation', 'Model Validation', 'This study implements a modified DeepLabv3+ architecture to automate brain tumor boundary analysis, achieving a 140% improvement in Dice Coefficient using ASPP and Focal Tversky Loss.', 'images/brain_tumor.jpg')">
-                            <h4>DeepLabv3+ for Brain Tumor Segmentation</h4>
-                            <p1>Role: Model Validation</p1>
-                            <p>Focused on medical imaging precision, this study implements a modified DeepLabv3+ architecture to automate brain tumor boundary analysis...</p>
-                            <div class="badges">
-                                <span class="badge"><i class='bx bxl-python'></i></span>
-                                <span class="badge"><i class='bx bx-brain'></i></span>
-                            </div>
-                        </div>
+                <div class="project-box" onclick="openModal(
+                    'DeepLabv3+ for Brain Tumor Segmentation', 
+                    'Model Validation & Optimization', 
+                    '<h3 class=\&quot;modal-sub-header\&quot;>Introduction & Purpose</h3> Deep learning has become a fundamental technology in neuro-oncology, where automated analysis is vital for improving diagnostic accuracy and reducing clinician workload. Precise delineation of tumor boundaries is essential for treatment planning, surgical guidance, and monitoring disease progression. The primary objective of this study was to implement a robust segmentation model for brain tumor detection in MRI scans and evaluate the impact of different optimization strategies—specifically Adam and SGD—on training convergence and spatial precision. A central focus was overcoming the \&quot;Accuracy Paradox\&quot;: while baseline models often report high pixel accuracy, they may fail in actual spatial overlap, making them clinically unreliable. <br><br> <h3 class=\&quot;modal-sub-header\&quot;>Software Architecture & Methodology</h3> This research utilized a modified DeepLabv3+ architecture, an encoder-decoder framework designed to capture multi-scale contextual information. The network utilized an Atrous Spatial Pyramid Pooling (ASPP) block featuring parallel dilated convolutions with rates of 6, 12, and 18. This allowed the model to detect tumors of varying sizes without increasing parameter counts or losing spatial resolution. Furthermore, critical skip connections were integrated to combine low-level feature maps from the early encoder stages with high-level semantic features in the decoder, which is essential for recovering fine spatial details typically lost during downsampling. To address the class imbalance inherent in medical imaging, where tumor regions are small compared to the total image area, the model employed the Focal Tversky Loss function. This penalized false negatives more heavily to ensure clinically safer predictions.<br><br> <h3 class=\&quot;modal-sub-header\&quot;>Optimization Results</h3> The study compared the adaptive Adam optimizer against Stochastic Gradient Descent (SGD) with momentum. While the baseline SGD trials showed a slow learning trend that failed to surpass a 0.4 Dice score, hyperparameter tuning—increasing training to 40 epochs and adjusting the Adam learning rate to 5e-5—allowed the model to break through performance plateaus. The final tuned model achieved a 111% improvement in segmentation performance, reaching a Dice Coefficient of 0.7816 and an IoU of 0.6440. Notably, the discriminative power of the model improved dramatically, reducing False Positives by 82.7% (from 126,337 to 21,842) and False Negatives by 68.1% (from 11,004 to 3,509). These results visually and quantitatively confirmed that the model transitioned from making wide, approximate guesses to targeted, clinical-grade segmentation.', 
+                    ['brain1', 'brain2', 'brain3', 'brain4']
+                )">
+                    <h4>DeepLabv3+ for Brain Tumor Segmentation</h4>
+                    <p1>Role: Model Validation</p1>
+                    <p>Automating brain tumor boundary analysis with modified DeepLabv3+ for high-precision medical imaging.</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bxl-python'></i></span>
+                        <span class="badge"><i class='bx bx-brain'></i></span>
+                    </div>
+                </div>
 
-                        <div class="project-box" onclick="openModal('AI-Powered Coral Health Assessment', 'Machine Learning Model Developer', 'A two-stage deep learning framework using U-Net for semantic segmentation and EfficientNet-B0 for health classification to monitor Philippine coral reefs with 82% accuracy.', 'images/coral_reef.jpg')">
-                            <h4>AI-Powered Coral Health Assessment</h4>
-                            <p1>Role: Machine Learning Model Developer</p1>
-                            <p>This project features a two-stage deep learning framework designed to automate the monitoring of Philippine coral reefs...</p>
-                            <div class="badges">
-                                <span class="badge"><i class='bx bxl-python'></i></span>
-                                <span class="badge"><i class='bx bx-analyse'></i></span>
-                            </div>
-                        </div>
+                <div class="project-box" onclick="openModal(
+                    'AI-Powered Coral Health Assessment', 
+                    'Machine Learning Model Developer', 
+                    '<h3 class=\&quot;modal-sub-header\&quot;>Introduction & Background</h3> Coral reefs, often called the \&quot;rainforests of the ocean,\&quot; are vital to Philippine marine biodiversity and coastal economies, yet they face a catastrophic decline due to climate-driven bleaching. In regions like the Davao Gulf, thermal stress has impacted over 60% of reefs. Traditional manual monitoring is labor-intensive and lacks scalability. This study proposes an automated diagnostic framework that fills this gap by integrating semantic segmentation and targeted classification to evaluate reef health objectively and at scale.<br><br> <h3 class=\&quot;modal-sub-header\&quot;>Research Objectives</h3> • To implement a <b>U-Net segmentation model</b> that isolates coral regions from complex underwater imagery, effectively removing background \&quot;noise\&quot; such as sand, fish, and algae.<br>• To develop a high-efficiency classification model using <b>EfficientNet-B0</b>, trained specifically to distinguish between healthy and bleached coral tissue.<br>• To evaluate the end-to-end performance of the integrated two-stage pipeline using completely unseen test datasets to validate real-world generalization.<br><br> <h3 class=\&quot;modal-sub-header\&quot;>Software Architecture</h3> <table class=\&quot;project-data-table\&quot;><thead><tr><th>Component</th><th>Technical Implementation</th></tr></thead><tbody><tr><td><b>Segmentation (U-Net)</b></td><td>Encoder-decoder path with skip-connections to combine semantic context and spatial resolution.</td></tr><tr><td><b>Classification (EfficientNet-B0)</b></td><td>Transfer learning approach pre-trained on ImageNet with a custom binary classifier head.</td></tr><tr><td><b>Preprocessing Pipeline</b></td><td>Standardized 256x256 resizing, pixel normalization, and HSV color-space mask generation.</td></tr><tr><td><b>Loss Functions</b></td><td>Binary Cross-Entropy (Segmentation) and Cross-Entropy (Classification).</td></tr></tbody></table><br> <h3 class=\&quot;modal-sub-header\&quot;>Experimental Results</h3> The integrated system achieved an <b>overall accuracy of 82.00%</b>. When evaluated independently, the U-Net model reached 76.24% pixel accuracy, while the EfficientNet-B0 classifier achieved 88.00% accuracy on unsegmented data. The study confirmed that while segmentation is challenging due to underwater turbidity, a dual-phase approach significantly reduces confounding variables by ensuring the classifier focuses exclusively on isolated coral tissue.', 
+                    ['coral']
+                )">
+                    <h4>AI-Powered Coral Health Assessment</h4>
+                    <p1>Role: Machine Learning Model Developer</p1>
+                    <p>This project features a two-stage deep learning framework designed to automate the monitoring of Philippine coral reefs...</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bxl-python'></i></span>
+                        <span class="badge"><i class='bx bx-analyse'></i></span>
+                    </div>
+                </div>
 
-                        <div class="project-box" onclick="openModal('Color Vision Deficiency Screening System', 'Lead Researcher / Hardware Programmer', 'A handheld ESP32-based system that displays Ishihara plates on an IPS TFT screen. It matches user keypad input against reference tables to identify red-green deficiencies with 95.6% accuracy.', 'images/color_vision.jpg')">
-                            <h4>Color Vision Deficiency Screening System</h4>
-                            <p1>Role: Lead Researcher / Hardware Programmer</p1>
-                            <p>This research outlines a handheld, portable color vision test system using an ESP32 and IPS TFT screen. [cite: 13, 14]</p>
-                            <div class="badges">
-                                <span class="badge"><i class='bx bx-chip'></i></span>
-                                <span class="badge"><i class='bx bx-scan'></i></span>
-                            </div>
-                        </div>
+                <div class="project-box" onclick="openModal(
+                    'Color Vision Deficiency Screening System', 
+                    'Lead Researcher & Hardware Programmer', 
+                    '<h3 class=\&quot;modal-sub-header\&quot;>Introduction & Purpose</h3> Color vision deficiency (CVD) affects approximately 1 in 12 men worldwide, yet many remain undiagnosed until it impacts their education or professional safety in fields like aviation and engineering[cite: 1051, 1052]. While digital apps exist, they are often inconsistent due to screen calibration and ambient light variables[cite: 1059]. The primary objective of this research was to design a fully autonomous, low-cost color vision tester using the ESP32 platform[cite: 1067]. This handheld device replicates clinical Ishihara tests independently of external software or internet connectivity, making it a reliable tool for early-stage screening in rural or resource-constrained communities [cite: 1064, 1066].<br><br> <h3 class=\&quot;modal-sub-header\&quot;>Software Architecture & Hardware</h3>  The system utilizes a specialized embedded processing algorithm that evaluates user input in real-time against pre-defined clinical response patterns[cite: 1068, 1091]. <br><br> <table class=\&quot;project-data-table\&quot;><thead><tr><th>Component</th><th>Technical Implementation</th></tr></thead><tbody><tr><td><b>Microcontroller</b></td><td>ESP32 managing SPI communication, GPIO polling, and real-time logic [cite: 1104, 1107].</td></tr><tr><td><b>Display</b></td><td>2.8-inch IPS TFT LCD rendering 24-bit BMP Ishihara plates with low latency [cite: 1105, 1169].</td></tr><tr><td><b>Input Interface</b></td><td>4x4 Matrix Keypad with debouncing logic and pull-down resistors for data integrity [cite: 1102, 1114].</td></tr><tr><td><b>Environmental Sensor</b></td><td>Integrated light sensor to provide qualitative warnings when ambient lighting is non-ideal [cite: 1079].</td></tr><tr><td><b>Feedback System</b></td><td>Closed-loop interaction using visual results on the LCD and auditory tones via a piezo buzzer [cite: 1096, 1098].</td></tr></tbody></table><br> <h3 class=\&quot;modal-sub-header\&quot;>Diagnostic Accuracy & Results</h3> The device achieved an <b>overall diagnostic accuracy of 95.6%</b> across 45 systematic trials[cite: 1208, 1219]. Using a simulation-based validation approach, the system correctly identified 100% of Normal Vision profiles and 93.3% of Protanopia and Deuteranopia cases[cite: 1208]. The embedded logic is designed for \&quot;safe-fail\&quot; operation; misclassifications resulted in general red-green deficiency warnings rather than incorrect specific diagnoses[cite: 1207, 1221]. With an average image load time of less than 1 second and response validation under 500 milliseconds, the device proved to be a robust and responsive tool for field deployment[cite: 1128, 1162].', 
+                    ['ishihara', 'ishihara2', 'ishihara3']
+                )">
+                    <h4>Color Vision Deficiency Screening System</h4>
+                    <p1>Role: Lead Researcher / Hardware Programmer</p1>
+                    <p>A portable, standalone diagnostic tool replicating clinical Ishihara tests using an ESP32 microcontroller...</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bx-chip'></i></span>
+                        <span class="badge"><i class='bx bx-scan'></i></span>
+                    </div>
+                </div>
+                <div class="project-box" onclick="openModal(
+                    'Snake Dash: Academic Challenge', 
+                    'Lead Android Developer', 
+                    '<h3 class=\&quot;modal-sub-header\&quot;>Brief Introduction</h3> Snakedash is a modern reimagining of the classic \&quot;Snake\&quot; game, designed with a humorous academic twist[cite: 1279, 1280]. In this version, players control a student-themed snake navigating through the challenges of university life[cite: 1282, 1283]. Instead of traditional fruits, the snake collects grades to grow and stay ahead; the higher the grade collected, the more points the player earns [cite: 1284, 1285, 1286].<br><br> <h3 class=\&quot;modal-sub-header\&quot;>Project Objectives</h3> • To recreate addictive classic mechanics while introducing a relatable, student-centric theme [cite: 1290].<br>• To provide personalized gameplay through character selection, allowing users to choose specific student avatars as their \&quot;snake\&quot; [cite: 1291].<br>• To implement a secure backend using <b>Firebase</b> for real-time synchronization of user profiles, high scores, and gameplay statistics [cite: 1292, 1293, 1296].<br>• To deliver a modern visual experience with smooth animations and responsive graphics built entirely using <b>Jetpack Compose</b> [cite: 1294, 1297].<br><br> <h3 class=\&quot;modal-sub-header\&quot;>Technical Features & User Stories</h3> <table class=\&quot;project-data-table\&quot;><thead><tr><th>Feature</th><th>Implementation Detail</th></tr></thead><tbody><tr><td><b>Framework</b></td><td>Jetpack Compose for declarative UI and fluid animations.</td></tr><tr><td><b>Backend</b></td><td>Firebase Authentication and Real-time Database for leaderboards.</td></tr><tr><td><b>User Flow</b></td><td>Secure login, character selection, and detailed game statistics.</td></tr><tr><td><b>Multiplayer</b></td><td>Integrated competitive mode for real-time academic \&quot;dashing.\&quot;</td></tr></tbody></table><br> <h3 class=\&quot;modal-sub-header\&quot;>Core Gameplay</h3> The game focuses on a high-stakes \&quot;Dash Through The Challenge,\&quot; where maintaining academic standing is the primary survival mechanic[cite: 1277]. By combining nostalgia with modern Android development practices, Snake Dash serves as both a functional game and a robust demonstration of cloud-integrated mobile application design[cite: 1293, 1304].', 
+                    ['snake']
+                )">
+                    <h4>Snake Dash</h4>
+                    <p1>Role: Lead Android Developer</p1>
+                    <p>A modern take on the classic "Snake" game with an academic twist, featuring Firebase integration and Jetpack Compose.</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bxl-android'></i></span>
+                        <span class="badge"><i class='bx bxl-firebase'></i></span>
+                    </div>
+                </div>
 
-                        <div class="project-box" onclick="openModal('Lazy Eye\'s Music Studio', 'Lead Programmer', 'A management system for a recording and rehearsing studio that handles instrument rentals, sales, and tutorial scheduling for voice and various instruments.', 'images/music_studio.jpg')">
-                            <h4>Lazy Eye's Music Studio</h4>
-                            <p1>Role: Lead Programmer</p1>
-                            <p>Lazy Eye's Record is a recording or rehearsing studio made for musicians who want to record or rehearse their talents in music...</p>
-                            <div class="badges">
-                                <span class="badge"><i class='bx bxl-python'></i></span>
-                            </div>
-                        </div>
+                <div class="project-box" onclick="openModal('Lazy Eye\'s Music Studio', 'Lead Programmer', 'A comprehensive management system for music studios, handling instrument rentals, tutorial scheduling, and retail sales.', ['music_studio'])">
+                    <h4>Lazy Eye's Music Studio</h4>
+                    <p1>Role: Lead Programmer</p1>
+                    <p>A specialized management platform for musicians to book rehearsals, record tracks, and manage tutorials.</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bxl-python'></i></span>
+                    </div>
+                </div>
 
-                        <div class="project-box" onclick="openModal('The Fall of John Paul', 'Frontend/Graphic Designer', 'A narrative-driven game about a student overcoming obstacles and enemies to reach graduation, featuring custom graphic designs and frontend mechanics.', 'images/game_project.jpg')">
-                            <h4>The Fall of John Paul</h4>
-                            <p1>Role: Frontend/Graphic Designer</p1>
-                            <p>“The Fall of John Paul” is a game about a once simple man to a fallen, defeated student...</p>
-                            <div class="badges">
-                                <span class="badge"><i class='bx bxl-java'></i></span>
-                                <span class="badge"><i class='bx bxl-c-plus-plus'></i></span>
-                            </div>
-                        </div>
+                <div class="project-box" onclick="openModal('The Fall of John Paul', 'Frontend/Graphic Designer', 'An interactive game following a student\'s journey toward graduation, featuring custom-designed obstacles and enemies.', ['game_project'])">
+                    <h4>The Fall of John Paul</h4>
+                    <p1>Role: Frontend/Graphic Designer</p1>
+                    <p>A narrative-driven game about overcoming academic obstacles and challenges on the road to graduation.</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bxl-java'></i></span>
+                        <span class="badge"><i class='bx bxl-c-plus-plus'></i></span>
+                    </div>
+                </div>
 
-                        <div class="project-box" onclick="openModal('Sakay Ta!', 'Lead Programmer', 'A transportation service application tailored for Mindanao, offering car, taxi, motorcycle, and tricycle bookings through an integrated database system.', 'images/sakay_ta.jpg')">
-                            <h4>Sakay Ta!</h4>
-                            <p1>Role: Lead Programmer</p1>
-                            <p>Sakay Ta! is an application that offers transportation services like cars/taxi, motorcycles, and tricycles...</p>
-                            <div class="badges">
-                                <span class="badge"><i class='bx bx-code-block'></i></span>
-                                <span class="badge"><i class='bx bxs-data'></i></span>
-                            </div>
-                        </div>
+                <div class="project-box" onclick="openModal('Sakay Ta!', 'Lead Programmer', 'A Mindanao-wide transportation service app facilitating Car, Taxi, Motorcycle, and Tricycle bookings.', ['sakay_ta'])">
+                    <h4>Sakay Ta!</h4>
+                    <p1>Role: Lead Programmer</p1>
+                    <p>A regional booking application providing seamless transportation services across various vehicle types in Mindanao.</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bx-code-block'></i></span>
+                        <span class="badge"><i class='bx bxs-data'></i></span>
+                    </div>
+                </div>
 
-                        <div class="project-box" onclick="openModal('Presensya', 'Lead Programmer', 'An IoT-based attendance tracker for computer laboratories. It uses RFID technology to allow students to log their attendance with a simple tap of their ID cards.', 'images/presensya.jpg')">
-                            <h4>Presensya</h4>
-                            <p1>Role: Lead Programmer</p1>
-                            <p>Presensya is a Computer Laboratory Attendance Tracker that allows students in MMCM to easily track their attendance record...</p>
-                            <div class="badges">
-                                <span class="badge"><i class='bx bx-rfid'></i></span>
-                                <span class="badge"><i class='bx bxs-data'></i></span>
-                            </div>
-                        </div>
+                <div class="project-box" onclick="openModal('Presensya', 'Lead Programmer', 'An IoT-enabled attendance tracker for MMCM computer labs using RFID technology for instant student check-ins.', ['presensya'])">
+                    <h4>Presensya</h4>
+                    <p1>Role: Lead Programmer</p1>
+                    <p>A Computer Laboratory Attendance Tracker using RFID scanning for streamlined record management.</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bx-rfid'></i></span>
+                        <span class="badge"><i class='bx bxs-data'></i></span>
+                    </div>
+                </div>
             </div>
                                 
             
@@ -359,10 +388,11 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2 id="modalTitle"></h2>
-            <p1 id="modalRole" style="display:block; margin: 10px 0; font-weight:bold;"></p1>
+            <p1 id="modalRole" style="display:block; margin: 10px 0; font-weight:bold; color: rgb(41, 126, 206);"></p1>
             
-            <div id="modalGallery" class="modal-gallery">
-                </div>
+            <div id="modalGallery" class="modal-gallery"></div>
+
+            <div id="modalTableContainer" class="modal-table-container"></div>
 
             <p id="modalDesc"></p>
         </div>
