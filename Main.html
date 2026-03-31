@@ -338,6 +338,21 @@
                     </div>
                 </div>
 
+                <div class="project-box" onclick="openModal(
+                    'SAP RISC-V Single-Cycle CPU', 
+                    'Lead Control Unit Designer / Verilog Programmer', 
+                    '<h3 class=\&quot;modal-sub-header\&quot;>Project Overview</h3> This project involved the design and development of a Simple-As-Possible (SAP) computer, an educational microprocessor model designed to demonstrate the fundamental \&quot;Fetch-Decode-Execute\&quot; cycle. By stripping away modern complexities, our team built a functional hardware foundation using a Single-Cycle Datapath based on the RISC-V Instruction Set Architecture (ISA). The system was implemented and simulated using Verilog in Xilinx ISE, focusing on the seamless interaction between the Program Counter, Memory, and ALU to process 32-bit instructions.<br><br> <h3 class=\&quot;modal-sub-header\&quot;>Software Architecture & Logic</h3> The architecture follows a single-cycle design where every instruction is completed in one clock cycle. A primary innovation was the implementation of the <b>Control Unit (CU)</b>, which serves as the brain of the CPU, generating specific control signals (Branch, MemRead, MemtoReg, ALUSrc, etc.) based on the 7-bit opcode of the instruction. <br><br> <table class=\&quot;project-data-table\&quot;><thead><tr><th>Core Component</th><th>Implementation Detail</th></tr></thead><tbody><tr><td><b>Program Counter (PC)</b></td><td>Registers the current instruction address and increments by 4 for sequential execution.</td></tr><tr><td><b>Arithmetic Logic Unit (ALU)</b></td><td>Executes R-type and I-type instructions (ADD, SUB, AND, OR) with custom ALU Control logic.</td></tr><tr><td><b>Register File (RF)</b></td><td>A dual-port 32-register bank allowing simultaneous reads and a single write-back.</td></tr><tr><td><b>Memory Units</b></td><td>Separate Instruction Memory (IM) for fetching and Data Memory (DM) for sw/lw operations.</td></tr><tr><td><b>Imm Generator</b></td><td>Extracts and sign-extends immediate values from I-type, S-type, and B-type instructions.</td></tr></tbody></table><br> <h3 class=\&quot;modal-sub-header\&quot;>Design & Simulation Results</h3> The CPU was verified through a custom assembly program stored in the Instruction Memory. Simulations confirmed the successful execution of complex instructions, including branching (BEQ) and data movement (LW/SW). For instance, during testing, the datapath successfully performed a branch jump skipping specific instructions when a condition was met, and handled immediate additions (ADDI) with 100% logic accuracy. This project serves as a robust demonstration of low-level hardware-software integration and digital logic design.', 
+                    ['risc'] 
+                )">
+                    <h4>SAP RISC-V Single-Cycle CPU</h4>
+                    <p1>Role: Control Unit Designer</p1>
+                    <p>A simplified RISC-V processor model implemented in Verilog to demonstrate the core fetch-decode-execute cycle of a 32-bit CPU.</p>
+                    <div class="badges">
+                        <span class="badge"><i class='bx bx-chip'></i></span>
+                        <span class="badge"><i class='bx bx-code-block'></i></span>
+                    </div>
+                </div>
+
                 <div class="project-box" onclick="openModal('Lazy Eye\'s Music Studio', 'Lead Programmer', 'A comprehensive management system for music studios, handling instrument rentals, tutorial scheduling, and retail sales.', ['music_studio'])">
                     <h4>Lazy Eye's Music Studio</h4>
                     <p1>Role: Lead Programmer</p1>
