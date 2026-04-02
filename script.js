@@ -162,25 +162,31 @@ function openModal(title, role, desc, imagesArray) {
     document.body.style.overflow = "hidden";
 }
 
-function openCertModal(imgSrc, certName) {
-    const modal = document.getElementById("certModal");
-    const gallery = document.getElementById("certModalGallery");
+function openCertViewer(imgSrc, name, id, date) {
+    const viewer = document.getElementById('certViewer');
 
-    gallery.innerHTML = "";
+    document.getElementById('certViewerImg').src = imgSrc;
+    document.getElementById('certViewerName').textContent = name;
+    document.getElementById('certViewerID').textContent = 'ID: ' + id;
+    document.getElementById('certViewerDate').textContent = 'Certified on: ' + date;
 
-    const img = document.createElement("img");
-    img.src = imgSrc;
-    img.alt = certName;
-    img.style.width = "100%";
-    img.style.maxWidth = "720px";
-    img.style.height = "auto";
-    img.style.borderRadius = "var(--radius-md)";
-    gallery.appendChild(img);
-
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden";
+    viewer.classList.add('cert-active');
 }
 
+function closeCertViewer() {
+    document.getElementById('certViewer').classList.remove('cert-active');
+}
+
+// Close viewer when clicking outside the card
+document.addEventListener('click', function(e) {
+    const viewer = document.getElementById('certViewer');
+    const card = document.querySelector('.cert-viewer-card');
+    if (viewer && viewer.classList.contains('cert-active')) {
+        if (!card.contains(e.target) && !e.target.closest('.certificate-box')) {
+            closeCertViewer();
+        }
+    }
+});
 document.addEventListener('DOMContentLoaded', function() {
     // --- Project modal close ---
     const projectModal = document.getElementById("projectModal");

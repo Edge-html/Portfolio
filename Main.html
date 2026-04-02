@@ -266,47 +266,57 @@
             <section id="certificates" class="section" style="display: none;">
                 <div class="certificates-container" id="certificates-container">
 
-                    <div class="certificate-box" onclick="openCertModal('images/css.png', 'Certificate Name Here')">
+                    <div class="certificate-box" onclick="openCertViewer('images/css.png', 'CSS Essentials', '71523fa6-914f-41e0-bab8-87feaf3e3c20', 'April 2026')">
                         <div class="cert-preview">
                             <img src="images/css.png" alt="Certificate Preview" class="cert-img">
                             <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
                         </div>
                         <div class="cert-info">
                             <h2>CSS Essentials</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>DICT-ITU DTC</p>
-                            <p class="cert-id"><i class='bx bx-hash'></i>71523fa6-914f-41e0-bab8-87feaf3e3c20</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> DICT-ITU DTC</p>
+                            <p class="cert-id"><i class='bx bx-hash'></i> 71523fa6-914f-41e0-bab8-87feaf3e3c20</p>
                             <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: April 2026</p>
                         </div>
                     </div>
 
-                    <div class="certificate-box" onclick="openCertModal('images/nss.png', 'Certificate Name Here')">
+                    <div class="certificate-box" onclick="openCertViewer('images/nss.png', 'Network Support and Security', 'b3b123b7-5e35-4825-9b4a-98d1971a6feb', 'April 2026')">
                         <div class="cert-preview">
                             <img src="images/nss.png" alt="Certificate Preview" class="cert-img">
                             <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
                         </div>
                         <div class="cert-info">
                             <h2>Network Support and Security</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>DICT-ITU DTC</p>
-                            <p class="cert-id"><i class='bx bx-hash'></i>b3b123b7-5e35-4825-9b4a-98d1971a6feb</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> DICT-ITU DTC</p>
+                            <p class="cert-id"><i class='bx bx-hash'></i> b3b123b7-5e35-4825-9b4a-98d1971a6feb</p>
                             <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: April 2026</p>
                         </div>
                     </div>
 
-                    <div class="certificate-box" onclick="openCertModal('images/softskills.png', 'Certificate Name Here')">
+                    <div class="certificate-box" onclick="openCertViewer('images/softskills.png', 'Soft Skills for Information Security Professionals', '0edb38297017c55946042899777e524f', 'June 2025')">
                         <div class="cert-preview">
                             <img src="images/softskills.png" alt="Certificate Preview" class="cert-img">
                             <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
                         </div>
                         <div class="cert-info">
                             <h2>Soft Skills for Information Security Professionals</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>LinkedIn Learning</p>
-                            <p class="cert-id"><i class='bx bx-hash'></i>0edb38297017c55946042899777e524f
-                                fe56dfe12a733c6895e3c6cf204dd291</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-id"><i class='bx bx-hash'></i> 0edb38297017c55946042899777e524f</p>
                             <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
                         </div>
                     </div>
 
-                    
+                    <div class="certificate-box" onclick="openCertViewer('images/python.png', 'Python Essential Training', 'fe56dfe12a733c6895e3c6cf204dd291', 'June 2025')">
+                        <div class="cert-preview">
+                            <img src="images/python.png" alt="Certificate Preview" class="cert-img">
+                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
+                        </div>
+                        <div class="cert-info">
+                            <h2>Python Essential Training</h2>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-id"><i class='bx bx-hash'></i> fe56dfe12a733c6895e3c6cf204dd291</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                        </div>
+                    </div>
 
                 </div>
             </section>
@@ -462,6 +472,18 @@
             <div id="modalTableContainer" class="modal-table-container"></div>
 
             <p id="modalDesc"></p>
+        </div>
+    </div>
+    <!-- Certificate Floating Viewer -->
+    <div id="certViewer" class="cert-viewer">
+        <div class="cert-viewer-card">
+            <button class="cert-viewer-close" onclick="closeCertViewer()"><i class='bx bx-x'></i></button>
+            <img id="certViewerImg" src="" alt="Certificate" class="cert-viewer-img">
+            <div class="cert-viewer-caption">
+                <p id="certViewerName" class="cert-viewer-name"></p>
+                <p id="certViewerID" class="cert-viewer-id"></p>
+                <p id="certViewerDate" class="cert-viewer-date"></p>
+            </div>
         </div>
     </div>
 </body>
