@@ -184,3 +184,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+function openCertModal(imgSrc, certName) {
+    const modal = document.getElementById("projectModal");
+    const gallery = document.getElementById("modalGallery");
+    const tableContainer = document.getElementById("modalTableContainer");
+
+    gallery.innerHTML = "";
+    tableContainer.innerHTML = "";
+
+    // Hide all text — image only
+    document.getElementById("modalTitle").style.display = "none";
+    document.getElementById("modalRole").style.display = "none";
+    document.getElementById("modalDesc").style.display = "none";
+
+    const img = document.createElement("img");
+    img.src = imgSrc;
+    img.className = "gallery-img";
+    img.style.width = "100%";
+    img.style.maxWidth = "720px";
+    img.style.height = "auto";
+    img.style.maxHeight = "none";
+    gallery.appendChild(img);
+
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
