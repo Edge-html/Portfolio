@@ -115,9 +115,9 @@ function openModal(title, role, desc, imagesArray) {
     const modal = document.getElementById("projectModal");
     const gallery = document.getElementById("modalGallery");
     const tableContainer = document.getElementById("modalTableContainer");
-    
+
     gallery.innerHTML = "";
-    tableContainer.innerHTML = ""; // Clear old tables
+    tableContainer.innerHTML = "";
 
     document.getElementById("modalTitle").innerText = title;
     document.getElementById("modalRole").innerText = role;
@@ -125,12 +125,11 @@ function openModal(title, role, desc, imagesArray) {
 
     imagesArray.forEach(imgName => {
         const img = document.createElement("img");
-        img.src = `images/${imgName}.png`; 
+        img.src = `images/${imgName}.png`;
         img.className = "gallery-img";
         gallery.appendChild(img);
     });
 
-    // logic for DeepLabv3+ Tables
     if (title.includes("DeepLabv3+")) {
         tableContainer.innerHTML = `
             <h3 class="table-heading">Software Architecture</h3>
@@ -144,9 +143,7 @@ function openModal(title, role, desc, imagesArray) {
                 </tbody>
             </table>
         `;
-    } 
-    // logic for Color Vision System Tables
-    else if (title.includes("Color Vision")) {
+    } else if (title.includes("Color Vision")) {
         tableContainer.innerHTML = `
             <h3 class="table-heading">Hardware Specifications</h3>
             <table class="project-data-table">
@@ -164,48 +161,60 @@ function openModal(title, role, desc, imagesArray) {
     modal.style.display = "block";
     document.body.style.overflow = "hidden";
 }
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById("projectModal");
-    const closeBtn = document.querySelector(".close-modal");
 
-    // Fix for the Close Button (X)
-    if (closeBtn) {
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Re-enable scrolling
-        }
-    }
-
-    // Fix for clicking outside the content (on the dark background)
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Re-enable scrolling
-        }
-    }
-});
 function openCertModal(imgSrc, certName) {
-    const modal = document.getElementById("projectModal");
-    const gallery = document.getElementById("modalGallery");
-    const tableContainer = document.getElementById("modalTableContainer");
+    const modal = document.getElementById("certModal");
+    const gallery = document.getElementById("certModalGallery");
 
     gallery.innerHTML = "";
-    tableContainer.innerHTML = "";
-
-    // Hide all text — image only
-    document.getElementById("modalTitle").style.display = "none";
-    document.getElementById("modalRole").style.display = "none";
-    document.getElementById("modalDesc").style.display = "none";
 
     const img = document.createElement("img");
     img.src = imgSrc;
-    img.className = "gallery-img";
+    img.alt = certName;
     img.style.width = "100%";
     img.style.maxWidth = "720px";
     img.style.height = "auto";
-    img.style.maxHeight = "none";
+    img.style.borderRadius = "var(--radius-md)";
     gallery.appendChild(img);
 
     modal.style.display = "block";
     document.body.style.overflow = "hidden";
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Project modal close ---
+    const projectModal = document.getElementById("projectModal");
+    const closeBtn = document.querySelector(".close-modal");
+
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            projectModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+
+    window.addEventListener("click", function(event) {
+        if (event.target === projectModal) {
+            projectModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+
+    // --- Certificate modal close ---
+    const certModal = document.getElementById("certModal");
+    const closeCertBtn = document.querySelector(".close-cert-modal");
+
+    if (closeCertBtn) {
+        closeCertBtn.onclick = function() {
+            certModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+
+    window.addEventListener("click", function(event) {
+        if (event.target === certModal) {
+            certModal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+});
