@@ -1,15 +1,16 @@
 /* ============================================================
    MEDIAQUERIES.CSS — Mobile-First Responsive Overrides
    Breakpoints:
-     Base (Mobile-first) : < 480px
-     sm  (Large Mobile)  : 481px  – 600px
-     md  (Tablet)        : 601px  – 900px
-     lg  (Laptop)        : 901px  – 1200px
-     xl  (Desktop)       : > 1200px  ← default (Main.css)
+     xs   (Mobile)        : ≤ 480px
+     sm   (Large Mobile)  : 481px – 600px
+     md   (Tablet)        : 601px – 900px
+     lg   (Laptop 14")    : 901px – 1100px
+     xl   (Laptop 15–16") : 1101px – 1400px
+     2xl  (Desktop)       : > 1400px ← default in Main.css
    ============================================================ */
 
 /* ============================================================
-   HAMBURGER BUTTON — Hidden on Desktop
+   HAMBURGER BUTTON — hidden on desktop by default
    ============================================================ */
 .hamburger {
   display: none;
@@ -42,67 +43,96 @@
   transition: var(--transition-base);
 }
 
-/* Animated X state */
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Nav overlay (JS-injected) */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1040;
+  backdrop-filter: blur(2px);
+  cursor: pointer;
 }
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.nav-overlay.open { display: block; }
+
+/* ============================================================
+   DESKTOP 1400px+ — subtle size boosts
+   ============================================================ */
+@media (min-width: 1400px) {
+  :root {
+    --hero-img-size:  480px;
+    --about-img-size: 420px;
+  }
 }
 
 /* ============================================================
-   LAPTOP — 901px to 1200px
-   Minor adjustments; layout stays mostly intact.
+   LAPTOP 15–16" — 1101px to 1400px
    ============================================================ */
-@media (max-width: 1200px) {
-
-  /* Home image sits closer */
-  .home-img {
-    width: 380px;
-    height: 380px;
-    left: 175%;
+@media (max-width: 1400px) {
+  :root {
+    --hero-img-size:  400px;
+    --about-img-size: 360px;
   }
 
-  /* About image: pull in slightly */
-  .about-img {
-    width: 320px;
-    height: 320px;
+  .project-boxes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   LAPTOP 14" — 901px to 1100px
+   Tighten the split-screen; images scale down.
+   ============================================================ */
+@media (max-width: 1100px) {
+  :root {
+    --hero-img-size:  320px;
+    --about-img-size: 300px;
   }
 
-  /* Project grid: 2 columns */
+  /* Reduce padding on smaller laptop screens */
+  #home,
+  #about {
+    padding-left: clamp(20px, 5%, 60px);
+    padding-right: clamp(20px, 5%, 60px);
+    gap: var(--space-lg);
+  }
+
   .project-boxes {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Experience cards: allow wrapping */
   .education-box {
-    flex-basis: calc(28% - var(--space-md));
+    flex: 1 1 180px;
+    max-width: 220px;
+  }
+
+  /* Navbar links: reduce gap on tighter viewports */
+  .navbar a {
+    margin-left: 24px;
+    font-size: 13px;
   }
 }
 
 /* ============================================================
    TABLET — 601px to 900px
-   Two-column grids, images repositioned, nav condensed.
+   Switch split-screen to vertical stack; show hamburger.
    ============================================================ */
 @media (max-width: 900px) {
 
   /* --- HEADER --- */
   .header {
     padding: 14px 24px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .hamburger {
     display: flex;
   }
 
-  /* Dropdown mobile nav */
+  /* Slide-in mobile nav */
   .navbar {
     display: none;
     flex-direction: column;
@@ -119,13 +149,15 @@
     gap: var(--space-md);
     z-index: 1050;
     box-shadow: -8px 0 40px rgba(0, 0, 0, 0.6);
-    transition: transform var(--transition-slow);
     transform: translateX(100%);
+    transition: transform var(--transition-slow), opacity var(--transition-slow);
+    opacity: 0;
   }
 
   .navbar.open {
     display: flex;
     transform: translateX(0);
+    opacity: 1;
   }
 
   .navbar a {
@@ -135,102 +167,61 @@
     border-bottom: 1px solid var(--color-border-glass);
     color: var(--color-text-primary);
   }
+  .navbar a:last-child { border-bottom: none; }
 
-  .navbar a:last-child {
-    border-bottom: none;
-  }
-
-  /* Nav overlay backdrop */
-  .nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 1040;
-    backdrop-filter: blur(2px);
-  }
-
-  .nav-overlay.open {
-    display: block;
-  }
-
-  /* --- HOME SECTION --- */
+  /* --- HOME SECTION — stack vertically --- */
   #home {
-    height: auto;
-    min-height: 100vh;
-    padding: 120px 6% 60px;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column-reverse; /* image on top, text below */
     align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 110px clamp(20px, 6%, 48px) 60px;
+    gap: var(--space-lg);
+    min-height: 100vh;
+  }
+
+  .home-img-wrapper {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
   }
 
   .home-content {
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-  }
-
-  /* Image: remove absolute positioning, inline as flex item */
-  .home-img {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 220px;
-    height: 220px;
-    margin-bottom: var(--space-lg);
-    animation: heroFloat 8s ease-in-out infinite;
-  }
-
-  .home-content h1 {
-    font-size: clamp(32px, 6vw, 48px);
-  }
-
-  .home-content h3 {
-    font-size: clamp(15px, 3vw, 20px);
+    text-align: center;
   }
 
   .home-content p {
-    font-size: 14px;
-    max-width: 100%;
     text-align: left;
+    max-width: 100%;
   }
 
-  .home-sci {
-    justify-content: center;
-  }
+  .home-sci { justify-content: center; }
+  .btn-box  { justify-content: center; }
 
-  .btn-box {
-    justify-content: center;
-    width: auto;
-  }
-
-  /* --- ABOUT SECTION --- */
+  /* --- ABOUT SECTION — stack vertically --- */
   #about {
-    padding: 80px 6%;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px clamp(20px, 6%, 48px) 60px;
+    gap: var(--space-lg);
+    min-height: auto;
   }
 
-  .about-img {
-    position: relative;
-    top: auto;
-    right: auto;
-    left: auto;
-    transform: none;
+  .about-img-wrapper {
+    flex: 0 0 auto;
     width: 180px;
     height: 180px;
-    margin-bottom: var(--space-lg);
   }
 
   .about-content {
     max-width: 100%;
     align-items: center;
     text-align: center;
-    padding: 32px 28px;
+    padding: 28px 24px;
   }
 
   .about-content p {
@@ -243,9 +234,7 @@
   }
 
   /* --- EXPERIENCE SECTION --- */
-  .experience-content {
-    padding: 0 var(--space-md);
-  }
+  .experience-content { padding: 0 var(--space-md); }
 
   .boxes-container,
   .skills-container,
@@ -255,14 +244,16 @@
   }
 
   .education-box {
-    flex-basis: auto;
-    width: min(400px, 90%);
+    flex: none;
+    width: min(400px, 100%);
+    max-width: 100%;
   }
 
   .skills-box,
   .work-box {
-    flex-basis: auto;
-    width: min(500px, 90%);
+    flex: none;
+    width: min(500px, 100%);
+    max-width: 100%;
   }
 
   /* --- PROJECT GRID --- */
@@ -272,12 +263,10 @@
   }
 
   /* --- BANANA CAT --- */
-  /* Push to bottom, smaller, lower z-index so it never covers content */
   .banana-cat-track {
     bottom: 10px;
     z-index: 10;
   }
-
   .banana-cat {
     width: 60px;
     opacity: 0.6;
@@ -289,41 +278,30 @@
     gap: var(--space-md);
     text-align: center;
   }
-
-  .footer-sci {
-    justify-content: center;
-  }
+  .footer-sci { justify-content: center; }
 }
 
 /* ============================================================
    LARGE MOBILE — 481px to 600px
-   Tighten spacing, single column projects.
+   Single-column projects, tighten spacing.
    ============================================================ */
 @media (max-width: 600px) {
+  :root {
+    --hero-img-size:  180px;
+    --about-img-size: 160px;
+  }
 
   .project-boxes {
     grid-template-columns: 1fr;
   }
 
-  .home-img {
-    width: 180px;
-    height: 180px;
+  .home-img-wrapper,
+  .about-img-wrapper {
+    width: var(--hero-img-size);
+    height: var(--hero-img-size);
   }
 
-  .about-img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .home-content h1 {
-    font-size: clamp(28px, 8vw, 40px);
-  }
-
-  .home-content h3 {
-    font-size: clamp(14px, 4vw, 18px);
-  }
-
-  /* Experience pill nav: allow wrapping */
+  /* Experience pill nav: wrap gracefully */
   .nav-experience {
     border-radius: var(--radius-lg);
     flex-wrap: wrap;
@@ -337,21 +315,20 @@
     padding: 7px 14px;
   }
 
-  /* Modal full-width on small screens */
-  .modal {
-    padding: 20px 12px;
+  /* Certificate boxes: full width */
+  .certificate-box {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
   }
 
+  /* Modal adjustments */
+  .modal { padding: 20px 12px; }
   .modal-content {
     padding: 28px 20px;
     width: 100%;
     border-radius: var(--radius-lg);
   }
-
-  #modalTitle {
-    font-size: clamp(17px, 5vw, 22px);
-  }
-
   .gallery-img {
     width: 100%;
     height: auto;
@@ -361,41 +338,32 @@
 
 /* ============================================================
    MOBILE — up to 480px
-   Maximum simplification, hide banana cat, stack everything.
+   Maximum simplification.
    ============================================================ */
 @media (max-width: 480px) {
+  :root {
+    --hero-img-size:  150px;
+    --about-img-size: 130px;
+  }
 
   /* --- HEADER --- */
-  .header {
-    padding: 12px 16px;
-  }
-
-  .logo {
-    font-size: 15px;
-  }
+  .header { padding: 12px 16px; }
+  .logo   { font-size: 15px; }
 
   /* --- HOME SECTION --- */
   #home {
-    padding: 100px 5% 48px;
+    padding: 90px 5% 48px;
+    gap: var(--space-md);
   }
 
-  .home-img {
-    width: 150px;
-    height: 150px;
-    margin-bottom: var(--space-md);
+  .home-img-wrapper {
+    width: var(--hero-img-size);
+    height: var(--hero-img-size);
   }
 
-  .home-content h1 {
-    font-size: clamp(26px, 9vw, 36px);
-  }
-
-  .home-content h3 {
-    font-size: clamp(13px, 4.5vw, 16px);
-  }
-
-  .home-content p {
-    font-size: 13px;
-  }
+  .home-content h1 { font-size: clamp(26px, 9vw, 36px); }
+  .home-content h3 { font-size: clamp(13px, 4.5vw, 16px); }
+  .home-content p  { font-size: 13px; }
 
   .btn-box {
     flex-direction: column;
@@ -412,35 +380,27 @@
 
   /* --- ABOUT --- */
   #about {
-    padding: 60px 5% 40px;
+    padding: 70px 5% 48px;
   }
 
-  .about-img {
-    width: 120px;
-    height: 120px;
+  .about-img-wrapper {
+    width: var(--about-img-size);
+    height: var(--about-img-size);
   }
 
   .about-content {
-    padding: 24px 16px;
+    padding: 20px 16px;
     gap: var(--space-md);
   }
 
-  .about-content h1 {
-    font-size: clamp(22px, 7vw, 30px);
-  }
+  .about-content h1 { font-size: clamp(20px, 7vw, 28px); }
+  .about-content h3 { font-size: 16px; }
+  .about-content p  { font-size: 13px; }
 
-  .about-content h3 {
-    font-size: 16px;
-  }
-
-  .about-content p {
-    font-size: 13px;
-  }
-
-  /* --- EXPERIENCE SECTION --- */
+  /* --- EXPERIENCE --- */
   .experience-content h1,
   .projects-content h1 {
-    font-size: clamp(28px, 8vw, 40px);
+    font-size: clamp(26px, 8vw, 38px);
   }
 
   .education-box,
@@ -457,20 +417,13 @@
     font-size: 14px;
   }
 
-  /* Tighter badge layout */
-  .badges {
-    gap: 4px;
-  }
-
-  .badge {
-    font-size: 11px;
-    padding: 4px 10px;
-  }
+  .badges { gap: 4px; }
+  .badge  { font-size: 11px; padding: 4px 10px; }
 
   /* --- PROJECTS --- */
   .project-boxes {
     gap: var(--space-md);
-    padding: 0 var(--space-xs);
+    padding: 0;
   }
 
   .project-box {
@@ -478,14 +431,10 @@
     min-height: 160px;
   }
 
-  .project-box h4 {
-    font-size: 14px;
-  }
+  .project-box h4 { font-size: 14px; }
 
-  /* --- BANANA CAT: fully hidden on smallest screens --- */
-  .banana-cat-track {
-    display: none;
-  }
+  /* --- BANANA CAT: hidden on smallest screens --- */
+  .banana-cat-track { display: none; }
 
   /* --- SOCIAL ICONS --- */
   .home-sci a,
@@ -496,10 +445,7 @@
   }
 
   /* --- MODAL --- */
-  .modal {
-    padding: 12px 8px;
-  }
-
+  .modal { padding: 12px 8px; }
   .modal-content {
     padding: 20px 14px;
     border-radius: var(--radius-md);
@@ -533,14 +479,13 @@
   }
 
   /* --- FOOTER --- */
-  footer {
-    padding: var(--space-lg) var(--space-md);
-  }
-}
+  footer { padding: var(--space-lg) var(--space-md); }
 
-/* ============================================================
-   UTILITY: Nav close overlay (injected by JS)
-   ============================================================ */
-.nav-overlay {
-  cursor: pointer;
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  .footer-sci { justify-content: center; }
 }

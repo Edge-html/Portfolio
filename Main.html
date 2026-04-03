@@ -1,4 +1,3 @@
-<!-- Main.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,102 +15,125 @@
 </head>
 
 <body>
+    <!-- ===================== HEADER ===================== -->
     <header class="header animate-header">
         <a href="#" class="logo">Ian Carl Solana</a>
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#projects">Experience</a>
-            <a href="#project">Projects</a>
+
+        <!-- Hamburger (shown on tablet/mobile) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home"     id="nav-home">Home</a>
+            <a href="#about"    id="nav-about">About Me</a>
+            <a href="#projects" id="nav-experience">Experience</a>
+            <a href="#project"  id="nav-projects">Projects</a>
         </nav>
     </header>
-    
 
-    <!-- Home Section -->
+    <!-- Overlay backdrop for mobile nav -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+
+    <!-- ===================== HOME SECTION ===================== -->
     <section id="home" class="home animate-section">
+
+        <!-- LEFT: text content -->
         <div class="home-content">
-            <img src="images/pic.png" alt="Profile Image" class="home-img">
             <h1>Hi, I'm Ian.</h1>
             <h3>Bachelor of Science in Computer Engineering</h3>
             <p>"This is how we know what love is: Jesus Christ laid down his life for us. And we ought to lay down our lives for our brothers and sisters."</p>
             <p>1 John 3:16</p>
             <div class="home-sci">
-                <a href="https://web.facebook.com/ian.solana.35" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://www.instagram.com/solyoursolution/" target="_blank"><i class='bx bxl-instagram-alt' ></i></a>
-                <a href="https://github.com/Edge-html" target="_blank"><i class='bx bxl-github' ></i></a>
+                <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
             </div>
             <div class="btn-box">
                 <a href="#about">About Me!</a>
             </div>
         </div>
+
+        <!-- RIGHT: profile image in a responsive wrapper -->
+        <div class="home-img-wrapper">
+            <img src="images/pic.png" alt="Ian Carl Solana profile photo" class="home-img">
+        </div>
+
+        <!-- Banana Cat Easter Egg -->
         <div class="banana-cat-track">
             <img src="images/banana-cat.gif" alt="Banana Cat" class="banana-cat">
         </div>
     </section>
 
-    <!-- About Section -->
+
+    <!-- ===================== ABOUT SECTION ===================== -->
     <section id="about" class="about animate-section">
+        <div class="glow-blob"></div>
+
+        <!-- LEFT: about image -->
+        <div class="about-img-wrapper">
+            <img src="images/isa.png" alt="Ian Solana profile" class="about-img">
+        </div>
+
+        <!-- RIGHT: glass card content -->
         <div class="about-content">
-            <img src="images/isa.png" alt="Profile Image" class="about-img">
             <h1>Welcome to my Website!</h1>
             <h3>More about me...</h3>
-            <p>I'm a student at Mapúa Malayan Colleges Mindanao, born on February 14, 2004. I love playing guitar—there’s something about expressing myself through music that really resonates with me. The way I can create melodies and chords reflects how I see the world, and it’s a hobby that helps me unwind and find balance amidst the demands of school.</p>
+            <p>I'm a student at Mapúa Malayan Colleges Mindanao, born on February 14, 2004. I love playing guitar—there's something about expressing myself through music that really resonates with me. The way I can create melodies and chords reflects how I see the world, and it's a hobby that helps me unwind and find balance amidst the demands of school.</p>
             <div class="btn-box">
                 <a href="assets/Ian_Carl_Solana_Resume.pdf" download="Ian_Carl_Solana_Resume">Download CV</a>
             </div>
-
         </div>
-        <div style="position: absolute; width: 300px; height: 300px; background: rgba(41, 126, 206, 0.2); filter: blur(100px); border-radius: 50%; top: 20%; right: 10%;"></div>
-    
-        <div class="about-content"></div>
-        
-        
     </section>
-    
 
-    <!-- About experience -->
+
+    <!-- ===================== EXPERIENCE SECTION ===================== -->
     <section id="projects" class="experience animate-section">
         <div class="experience-content">
             <h1>My Experience.</h1>
             <p>_______________________________________________</p>
-            <nav class="nav-experience">
-                <a href="#education" id="education-link">Education</a>
-                <a href="#skills" id="skills-link">Skills</a>
-                <a href="#work" id="work-link">Experiences</a>
+
+            <nav class="nav-experience" aria-label="Experience tabs">
+                <a href="#education"   id="education-link">Education</a>
+                <a href="#skills"      id="skills-link">Skills</a>
+                <a href="#work"        id="work-link">Experiences</a>
                 <a href="#certificates" id="certificates-link">Certificates</a>
             </nav>
 
-            <!-- Education -->
+            <!-- EDUCATION -->
             <section id="education" class="section">
                 <div class="boxes-container" id="education-container">
                     <div class="education-box">
                         <h2>Grade School</h2>
                         <p>Perezville Kiddie Care and Learning School Inc.</p>
-                        <br><br><br><br>
-                        <p>2010-2016</p>
+                        <br><br>
+                        <p>2010–2016</p>
                     </div>
                     <div class="education-box">
                         <h2>High School</h2>
                         <p>Koronadal National Comprehensive High School</p>
-                        <br><br><br><br>
-                        <p>2016-2020</p>
+                        <br><br>
+                        <p>2016–2020</p>
                     </div>
                     <div class="education-box">
                         <h2>Senior High School</h2>
                         <p>Notre Dame of Marbel University-Integrated Basic Education Department</p>
-                        <br><br><br>
-                        <p>2020-2022</p>
+                        <br>
+                        <p>2020–2022</p>
                     </div>
                     <div class="education-box">
                         <h2>College</h2>
                         <p>Mapua Malayan Colleges Mindanao</p>
-                        <br><br><br><br>
-                        <p>2022-Present</p>
+                        <br><br>
+                        <p>2022–Present</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Skills -->
+            <!-- SKILLS -->
             <section id="skills" class="section" style="display: none;">
                 <div class="skills-container" id="skills-container">
                     <div class="skills-box">
@@ -128,7 +150,7 @@
                     </div>
                     <div class="skills-box">
                         <i class='bx bx-brain' style="font-size: 2.5rem; color: rgb(41, 126, 206);"></i>
-                        <h2>AI & ML</h2>
+                        <h2>AI &amp; ML</h2>
                         <div class="badges">
                             <span class="badge"><i class='bx bx-analyse'></i> Deep Learning</span>
                             <span class="badge"><i class='bx bx-scan'></i> Computer Vision</span>
@@ -143,7 +165,7 @@
                             <span class="badge"><i class='bx bx-shield-quarter'></i> Cisco Networking</span>
                             <span class="badge"><i class='bx bx-broadcast'></i> Huawei eNSP</span>
                             <span class="badge"><i class='bx bx-wifi'></i> IoT Connectivity</span>
-                            <span class="badge"><i class='bx bx-git-branch'></i> Routing & Switching</span>
+                            <span class="badge"><i class='bx bx-git-branch'></i> Routing &amp; Switching</span>
                         </div>
                     </div>
                     <div class="skills-box">
@@ -177,7 +199,7 @@
                 </div>
             </section>
 
-            <!-- Work / Experiences -->
+            <!-- WORK / EXPERIENCES -->
             <section id="work" class="section" style="display: none;">
                 <div class="work-container" id="work-container">
                     <div class="skills-box">
@@ -190,7 +212,7 @@
                                     <h3>RWR I.T Solutions Enterprise Co.</h3>
                                     <div class="badges">
                                         <span class="badge"><i class='bx bx-user'></i> Helper</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> May 2025 - Nov 2025</span>
+                                        <span class="badge"><i class='bx bx-calendar'></i> May 2025 – Nov 2025</span>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +222,7 @@
                                     <h3>Margella's Little Kitchen</h3>
                                     <div class="badges">
                                         <span class="badge"><i class='bx bx-user'></i> Helper</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Feb 2023 - May 2023</span>
+                                        <span class="badge"><i class='bx bx-calendar'></i> Feb 2023 – May 2023</span>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +232,7 @@
                                     <h3>Koronadal Essenxia Technologies</h3>
                                     <div class="badges">
                                         <span class="badge"><i class='bx bx-user'></i> Helper</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Jan 2021 - Sep 2021</span>
+                                        <span class="badge"><i class='bx bx-calendar'></i> Jan 2021 – Sep 2021</span>
                                     </div>
                                 </div>
                             </div>
@@ -226,7 +248,7 @@
                                     <h3>Institute of Computer Engineers of the Philippines</h3>
                                     <div class="badges">
                                         <span class="badge"><i class='bx bx-crown'></i> Treasurer</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Aug 2025 - Present</span>
+                                        <span class="badge"><i class='bx bx-calendar'></i> Aug 2025 – Present</span>
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +258,7 @@
                                     <h3>Institute of Computer Engineers of the Philippines</h3>
                                     <div class="badges">
                                         <span class="badge"><i class='bx bx-id-card'></i> Director of Technicals</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Aug 2024 - Present</span>
+                                        <span class="badge"><i class='bx bx-calendar'></i> Aug 2024 – Present</span>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +268,7 @@
                                     <h3>Supreme Student Government - KNCHS</h3>
                                     <div class="badges">
                                         <span class="badge"><i class='bx bx-id-card'></i> Business Manager</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Apr 2018 - Apr 2019</span>
+                                        <span class="badge"><i class='bx bx-calendar'></i> Apr 2018 – Apr 2019</span>
                                     </div>
                                 </div>
                             </div>
@@ -254,159 +276,116 @@
                     </div>
                 </div>
             </section>
-            <!-- Certificate Modal -->
-            <div id="certModal" class="modal">
-                <div class="modal-content">
-                    <span class="close-cert-modal">&times;</span>
-                    <div id="certModalGallery" class="modal-gallery" style="border: none; background: none; padding: 0; margin: 0;"></div>
-                </div>
-            </div>
 
-            <!-- Certificates -->
+            <!-- CERTIFICATES -->
             <section id="certificates" class="section" style="display: none;">
                 <div class="certificates-container" id="certificates-container">
 
                     <div class="certificate-box" onclick="openCertViewer('images/css.png', 'CSS Essentials', '71523fa6-914f-41e0-bab8-87feaf3e3c20', 'April 2026')">
-                        <div class="cert-preview">
-                            <img src="images/css.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/css.png" alt="CSS Essentials Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>CSS Essentials</h2>
                             <p class="cert-issuer"><i class='bx bx-building'></i> DICT-ITU DTC</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: April 2026</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2026</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/nss.png', 'Network Support and Security', 'b3b123b7-5e35-4825-9b4a-98d1971a6feb', 'April 2026')">
-                        <div class="cert-preview">
-                            <img src="images/nss.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/nss.png" alt="Network Support Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Network Support and Security</h2>
                             <p class="cert-issuer"><i class='bx bx-building'></i> DICT-ITU DTC</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: April 2026</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2026</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/softskills.png', 'Soft Skills for Information Security Professionals', '0edb38297017c55946042899777e524f', 'June 2025')">
-                        <div class="cert-preview">
-                            <img src="images/softskills.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/softskills.png" alt="Soft Skills Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Soft Skills for Information Security Professionals</h2>
                             <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/python.png', 'Python Essential Training', '26607115f4fe3ff7b92159a2e9154d1f3ac9f68614689f8cded4abd935b39eec', 'June 2025')">
-                        <div class="cert-preview">
-                            <img src="images/python.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/python.png" alt="Python Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Python Essential Training</h2>
                             <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/bash.png', 'Learning Bash Scripting (2021)', '4c0a0a4cfbb9eeaeb37792b734ce830f9cb7e9a935844e438f946a854a730acd', 'June 2025')">
-                        <div class="cert-preview">
-                            <img src="images/bash.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/bash.png" alt="Bash Scripting Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Learning Bash Scripting (2021)</h2>
                             <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/ps.png', 'Learning PowerShell', '849cfa4f1e93d0aa72aadca9839903db6bbd46534aa5060d44bece1e44135258', 'June 2025')">
-                        <div class="cert-preview">
-                            <img src="images/ps.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/ps.png" alt="PowerShell Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Learning PowerShell</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>Professional Certifications and Continuing Education Units (CEUs)</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/protect.png', 'Protecting Your Network with Open Source Software', 'f4f1964f2bc5c9597b978974ce6862e5605606c0253fa0008feabc372659e9e3', 'June 2025')">
-                        <div class="cert-preview">
-                            <img src="images/protect.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/protect.png" alt="Network Protection Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Protecting Your Network with Open Source Software</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/wire.png', 'Wireshark: Malware and Forensics', 'f746d257d490b4e5a777b08358ad6de8fb9e151e10e445bc55d29262be7d3494', 'June 2025')">
-                        <div class="cert-preview">
-                            <img src="images/wire.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div> 
-                        </div>
+                        <div class="cert-preview"><img src="images/wire.png" alt="Wireshark Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Wireshark: Malware and Forensics</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/linux.png', 'Learning Linux Command Line (2023)', '8d53f65b9b3615cce970e8368edf542c231c005d212eea4d8aab2cb957af7c47', 'June 2025')">
-                        <div class="cert-preview">
-                            <img src="images/linux.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/linux.png" alt="Linux Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Learning Linux Command Line (2023)</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
                         </div>
                     </div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/net.png', 'Network Forensics (2019)', ' b49cec1b7d667b2a306a3e93980fadea63c73c9f923fdfa7b9e9432e79b8928d', 'June 2025')">
-                        <div class="cert-preview">
-                            <img src="images/net.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                    <div class="certificate-box" onclick="openCertViewer('images/net.png', 'Network Forensics (2019)', 'b49cec1b7d667b2a306a3e93980fadea63c73c9f923fdfa7b9e9432e79b8928d', 'June 2025')">
+                        <div class="cert-preview"><img src="images/net.png" alt="Network Forensics Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Network Forensics (2019)</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: June 2025</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
                         </div>
                     </div>
 
                     <div class="certificate-box" onclick="openCertViewer('images/os.png', 'Operating System Forensics (2019)', 'e7d7105082a498a26bdbd3d1ee64b2fe85b0c3b87edb3e5255c18ba6959fb30d', 'April 2025')">
-                        <div class="cert-preview">
-                            <img src="images/os.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                        <div class="cert-preview"><img src="images/os.png" alt="OS Forensics Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Operating System Forensics (2019)</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: April 2025</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2025</p>
                         </div>
                     </div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/lcf.png', 'Learning Computer Forensics ', '39bc5f6843a77ddfb88ea7f19b384ec8e97b60b04b3b3842b395322c3c3043ae', 'April 2025')">
-                        <div class="cert-preview">
-                            <img src="images/lcf.png" alt="Certificate Preview" class="cert-img">
-                            <div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div>
-                        </div>
+                    <div class="certificate-box" onclick="openCertViewer('images/lcf.png', 'Learning Computer Forensics', '39bc5f6843a77ddfb88ea7f19b384ec8e97b60b04b3b3842b395322c3c3043ae', 'April 2025')">
+                        <div class="cert-preview"><img src="images/lcf.png" alt="Computer Forensics Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
                         <div class="cert-info">
                             <h2>Learning Computer Forensics</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> Certified on: April 2025</p>
+                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
+                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2025</p>
                         </div>
                     </div>
 
@@ -415,14 +394,17 @@
 
         </div>
     </section>
-    <!-- About Projects -->
+
+
+    <!-- ===================== PROJECTS SECTION ===================== -->
     <section id="project" class="projects animate-section">
         <div class="projects-content">
             <h1>Projects.</h1>
             <p>_______________________________________________</p>
             <p>This is all of my projects from my 1st Year to my 4th Year.</p>
-                
+
             <div class="project-boxes">
+
                 <div class="project-box" onclick="openModal(
                     'DeepLabv3+ for Brain Tumor Segmentation', 
                     'Model Validation & Optimization', 
@@ -546,45 +528,51 @@
                         <span class="badge"><i class='bx bxl-c-plus-plus'></i></span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-    <script src="script.js"></script>
-    <div id="projectModal" class="modal">
+
+
+    <!-- ===================== PROJECT MODAL ===================== -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" role="button" aria-label="Close modal">&times;</span>
             <h2 id="modalTitle"></h2>
-            <p1 id="modalRole" style="display:block; margin: 10px 0; font-weight:bold; color: rgb(41, 126, 206);"></p1>
-            
+            <span id="modalRole" style="display:block; margin: 10px 0; font-weight:bold; color: rgb(41, 126, 206); font-size:11px; text-transform:uppercase; letter-spacing:2px;"></span>
             <div id="modalGallery" class="modal-gallery"></div>
-
             <div id="modalTableContainer" class="modal-table-container"></div>
-
             <p id="modalDesc"></p>
         </div>
     </div>
-    <!-- Certificate Floating Viewer -->
-    <div id="certViewer" class="cert-viewer">
+
+    <!-- ===================== CERTIFICATE FLOATING VIEWER ===================== -->
+    <div id="certViewer" class="cert-viewer" role="dialog" aria-modal="true">
         <div class="cert-viewer-card">
-            <button class="cert-viewer-close" onclick="closeCertViewer()"><i class='bx bx-x'></i></button>
+            <button class="cert-viewer-close" onclick="closeCertViewer()" aria-label="Close certificate viewer">
+                <i class='bx bx-x'></i>
+            </button>
             <img id="certViewerImg" src="" alt="Certificate" class="cert-viewer-img">
             <div class="cert-viewer-caption">
                 <p id="certViewerName" class="cert-viewer-name"></p>
-                <p id="certViewerID" class="cert-viewer-id"></p>
+                <p id="certViewerID"   class="cert-viewer-id"></p>
                 <p id="certViewerDate" class="cert-viewer-date"></p>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
+
+<!-- ===================== FOOTER ===================== -->
 <footer>
     <div class="footer-content animate-footer">
-        <p>&copy; 2022 Ian Carl Solana</p>
+        <p>&copy; 2025 Ian Carl Solana</p>
         <div class="footer-sci">
-            <a href="https://web.facebook.com/ian.solana.35" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
-            <a href="https://www.instagram.com/solyoursolution/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
-            <a href="https://github.com/Edge-html" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
         </div>
     </div>
 </footer>
-
 </html>

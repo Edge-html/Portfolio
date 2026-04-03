@@ -1,226 +1,260 @@
-//script.js
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.section'); 
-  const links = document.querySelectorAll('.nav-experience a'); 
+// ============================================================
+// SCRIPT.JS — Portfolio JavaScript
+// ============================================================
 
-  function showSection(activeSectionId) {
-      sections.forEach(section => {
-          if (section.id === activeSectionId) {
-              section.style.display = 'block'; 
-          } else {
-              section.style.display = 'none';
-          }
-      });
-      links.forEach(link => {
-          const linkTarget = link.getAttribute('href').substring(1); 
-          if (linkTarget === activeSectionId) {
-              link.classList.add('active');
-          } else {
-              link.classList.remove('active');
-          }
-      });
+document.addEventListener('DOMContentLoaded', function () {
+
+  // --------------------------------------------------------
+  // 1. HAMBURGER MENU
+  // --------------------------------------------------------
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navbar       = document.getElementById('navbar');
+  const navOverlay   = document.getElementById('navOverlay');
+
+  function openNav() {
+    hamburgerBtn.classList.add('open');
+    navbar.classList.add('open');
+    navOverlay.classList.add('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden'; // prevent background scroll
   }
 
-  links.forEach(link => {
-      link.addEventListener('click', function(event) {
-          event.preventDefault(); 
-          const targetSection = link.getAttribute('href').substring(1); 
-          showSection(targetSection);
-      });
+  function closeNav() {
+    hamburgerBtn.classList.remove('open');
+    navbar.classList.remove('open');
+    navOverlay.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', function () {
+      navbar.classList.contains('open') ? closeNav() : openNav();
+    });
+  }
+
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeNav);
+  }
+
+  // Close nav when a link is clicked (mobile UX)
+  navbar && navbar.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
   });
 
 
-  showSection('education');
-});
-function toggleNavbar() {
-  var navbar = document.querySelector('.navbar');
-  if (navbar.style.display === 'block') {
-      navbar.style.display = 'none';
-  } else {
-      navbar.style.display = 'block';
-  }
-}
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+  // --------------------------------------------------------
+  // 2. HEADER SCROLL EFFECT
+  // --------------------------------------------------------
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', function () {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+
+  // --------------------------------------------------------
+  // 3. EXPERIENCE TAB SWITCHER
+  // --------------------------------------------------------
+  const sections = document.querySelectorAll('.section');
+  const links    = document.querySelectorAll('.nav-experience a');
+
+  function showSection(activeSectionId) {
+    sections.forEach(section => {
+      const isActive = section.id === activeSectionId;
+
+      if (isActive) {
+        section.style.display = 'block';
+        section.classList.add('show');
+        section.classList.remove('hide');
+
+        // Stagger box animations
+        const boxes = section.querySelectorAll('.education-box, .skills-box, .work-box');
+        boxes.forEach((box, index) => {
+          box.style.transition = `opacity 0.4s ease ${index * 80}ms, transform 0.4s ease ${index * 80}ms`;
+          // Use rAF to ensure transition fires after display:block
+          requestAnimationFrame(() => {
+            box.style.opacity   = '1';
+            box.style.transform = 'translateY(0)';
+          });
         });
+      } else {
+        section.style.display = 'none';
+        section.classList.remove('show');
+        section.classList.add('hide');
+
+        const boxes = section.querySelectorAll('.education-box, .skills-box, .work-box');
+        boxes.forEach(box => {
+          box.style.opacity   = '0';
+          box.style.transform = 'translateY(16px)';
+        });
+      }
     });
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('.section');
-    const links = document.querySelectorAll('.nav-experience a');
-
-    function showSection(activeSectionId) {
-        sections.forEach(section => {
-            if (section.id === activeSectionId) {
-                section.classList.add('show');
-                section.classList.remove('hide');
-                // Trigger animation for boxes inside the section
-                const boxes = section.querySelectorAll('.education-box, .skills-box, .work-box');
-                boxes.forEach((box, index) => {
-                    setTimeout(() => {
-                        box.style.opacity = '1';
-                        box.style.transform = 'translateY(0)';
-                    }, index * 100); // Delay each box animation slightly for a staggered effect
-                });
-            } else {
-                section.classList.add('hide');
-                section.classList.remove('show');
-                // Reset the boxes inside hidden sections
-                const boxes = section.querySelectorAll('.education-box, .skills-box, .work-box');
-                boxes.forEach(box => {
-                    box.style.opacity = '0';
-                    box.style.transform = 'translateY(20px)';
-                });
-            }
-        });
-
-        links.forEach(link => {
-            const linkTarget = link.getAttribute('href').substring(1);
-            if (linkTarget === activeSectionId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    }
 
     links.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetSection = link.getAttribute('href').substring(1);
-            showSection(targetSection);
-        });
+      const target = link.getAttribute('href').substring(1);
+      link.classList.toggle('active', target === activeSectionId);
     });
+  }
 
-    // Initially show the first section
-    showSection('education');
-});
-// Function to handle scroll event and toggle the 'scrolled' class on the header
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-
-function openModal(title, role, desc, imagesArray) {
-    const modal = document.getElementById("projectModal");
-    const gallery = document.getElementById("modalGallery");
-    const tableContainer = document.getElementById("modalTableContainer");
-
-    gallery.innerHTML = "";
-    tableContainer.innerHTML = "";
-
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalRole").innerText = role;
-    document.getElementById("modalDesc").innerHTML = desc;
-
-    imagesArray.forEach(imgName => {
-        const img = document.createElement("img");
-        img.src = `images/${imgName}.png`;
-        img.className = "gallery-img";
-        gallery.appendChild(img);
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      showSection(link.getAttribute('href').substring(1));
     });
+  });
 
-    if (title.includes("DeepLabv3+")) {
-        tableContainer.innerHTML = `
-            <h3 class="table-heading">Software Architecture</h3>
-            <table class="project-data-table">
-                <thead><tr><th>Module</th><th>Technical Detail</th></tr></thead>
-                <tbody>
-                    <tr><td><b>Encoder</b></td><td>DCNN backbone with Atrous Convolution</td></tr>
-                    <tr><td><b>Bottleneck</b></td><td>ASPP block with dilation rates 6, 12, 18</td></tr>
-                    <tr><td><b>Decoder</b></td><td>Refinement using 4x Upsampling and Skip Connections</td></tr>
-                    <tr><td><b>Loss Function</b></td><td>Focal Tversky Loss (α=0.7, β=0.3)</td></tr>
-                </tbody>
-            </table>
-        `;
-    } else if (title.includes("Color Vision")) {
-        tableContainer.innerHTML = `
-            <h3 class="table-heading">Hardware Specifications</h3>
-            <table class="project-data-table">
-                <thead><tr><th>Component</th><th>Specification</th></tr></thead>
-                <tbody>
-                    <tr><td><b>Microcontroller</b></td><td>ESP32 Dual-Core platform</td></tr>
-                    <tr><td><b>Display</b></td><td>2.8-inch IPS TFT LCD</td></tr>
-                    <tr><td><b>Communication</b></td><td>SPI Interface for SD/TFT</td></tr>
-                    <tr><td><b>Input</b></td><td>4x4 Matrix Keypad</td></tr>
-                </tbody>
-            </table>
-        `;
+  // Show education tab by default
+  showSection('education');
+
+
+  // --------------------------------------------------------
+  // 4. SMOOTH SCROLL for anchor links
+  //    (skip experience tab links handled above)
+  // --------------------------------------------------------
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      // Only smooth-scroll top-level section anchors (not tab links)
+      if (['#home', '#about', '#projects', '#project'].includes(href)) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+
+  // --------------------------------------------------------
+  // 5. PROJECT MODAL
+  // --------------------------------------------------------
+  const projectModal   = document.getElementById('projectModal');
+  const closeModalBtn  = document.querySelector('.close-modal');
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', function () {
+      projectModal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  }
+
+  window.addEventListener('click', function (e) {
+    if (e.target === projectModal) {
+      projectModal.style.display = 'none';
+      document.body.style.overflow = '';
     }
+  });
 
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden";
-}
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && projectModal && projectModal.style.display === 'block') {
+      projectModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
 
-function openCertViewer(imgSrc, name, id, date) {
+
+  // --------------------------------------------------------
+  // 6. CERTIFICATE VIEWER — close on outside click
+  // --------------------------------------------------------
+  document.addEventListener('click', function (e) {
     const viewer = document.getElementById('certViewer');
-
-    document.getElementById('certViewerImg').src = imgSrc;
-    document.getElementById('certViewerName').textContent = name;
-    document.getElementById('certViewerID').textContent = 'ID: ' + id;
-    document.getElementById('certViewerDate').textContent = 'Certified on: ' + date;
-
-    viewer.classList.add('cert-active');
-}
-
-function closeCertViewer() {
-    document.getElementById('certViewer').classList.remove('cert-active');
-}
-
-// Close viewer when clicking outside the card
-document.addEventListener('click', function(e) {
-    const viewer = document.getElementById('certViewer');
-    const card = document.querySelector('.cert-viewer-card');
+    const card   = document.querySelector('.cert-viewer-card');
     if (viewer && viewer.classList.contains('cert-active')) {
-        if (!card.contains(e.target) && !e.target.closest('.certificate-box')) {
-            closeCertViewer();
-        }
+      if (card && !card.contains(e.target) && !e.target.closest('.certificate-box')) {
+        closeCertViewer();
+      }
     }
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // --- Project modal close ---
-    const projectModal = document.getElementById("projectModal");
-    const closeBtn = document.querySelector(".close-modal");
+  });
 
-    if (closeBtn) {
-        closeBtn.onclick = function() {
-            projectModal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    }
+}); // end DOMContentLoaded
 
-    window.addEventListener("click", function(event) {
-        if (event.target === projectModal) {
-            projectModal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    });
 
-    // --- Certificate modal close ---
-    const certModal = document.getElementById("certModal");
-    const closeCertBtn = document.querySelector(".close-cert-modal");
+// ============================================================
+// GLOBAL FUNCTIONS (called inline via onclick attributes)
+// ============================================================
 
-    if (closeCertBtn) {
-        closeCertBtn.onclick = function() {
-            certModal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    }
+/**
+ * Opens the project detail modal.
+ * @param {string}   title       - Project title
+ * @param {string}   role        - Role label
+ * @param {string}   desc        - HTML description string
+ * @param {string[]} imagesArray - Array of image base names (without path/ext)
+ */
+function openModal(title, role, desc, imagesArray) {
+  const modal          = document.getElementById('projectModal');
+  const gallery        = document.getElementById('modalGallery');
+  const tableContainer = document.getElementById('modalTableContainer');
 
-    window.addEventListener("click", function(event) {
-        if (event.target === certModal) {
-            certModal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    });
-});
+  gallery.innerHTML        = '';
+  tableContainer.innerHTML = '';
+
+  document.getElementById('modalTitle').innerText = title;
+  document.getElementById('modalRole').innerText  = role;
+  document.getElementById('modalDesc').innerHTML  = desc;
+
+  imagesArray.forEach(imgName => {
+    const img = document.createElement('img');
+    img.src       = `images/${imgName}.png`;
+    img.className = 'gallery-img';
+    img.alt       = imgName;
+    gallery.appendChild(img);
+  });
+
+  // Contextual hardware/architecture tables
+  if (title.includes('DeepLabv3+')) {
+    tableContainer.innerHTML = `
+      <h3 class="table-heading">Software Architecture</h3>
+      <table class="project-data-table">
+        <thead><tr><th>Module</th><th>Technical Detail</th></tr></thead>
+        <tbody>
+          <tr><td><b>Encoder</b></td><td>DCNN backbone with Atrous Convolution</td></tr>
+          <tr><td><b>Bottleneck</b></td><td>ASPP block with dilation rates 6, 12, 18</td></tr>
+          <tr><td><b>Decoder</b></td><td>Refinement using 4× Upsampling and Skip Connections</td></tr>
+          <tr><td><b>Loss Function</b></td><td>Focal Tversky Loss (α=0.7, β=0.3)</td></tr>
+        </tbody>
+      </table>`;
+  } else if (title.includes('Color Vision')) {
+    tableContainer.innerHTML = `
+      <h3 class="table-heading">Hardware Specifications</h3>
+      <table class="project-data-table">
+        <thead><tr><th>Component</th><th>Specification</th></tr></thead>
+        <tbody>
+          <tr><td><b>Microcontroller</b></td><td>ESP32 Dual-Core platform</td></tr>
+          <tr><td><b>Display</b></td><td>2.8-inch IPS TFT LCD</td></tr>
+          <tr><td><b>Communication</b></td><td>SPI Interface for SD/TFT</td></tr>
+          <tr><td><b>Input</b></td><td>4×4 Matrix Keypad</td></tr>
+        </tbody>
+      </table>`;
+  }
+
+  modal.style.display     = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+
+/**
+ * Opens the certificate floating viewer.
+ */
+function openCertViewer(imgSrc, name, id, date) {
+  const viewer = document.getElementById('certViewer');
+  document.getElementById('certViewerImg').src        = imgSrc;
+  document.getElementById('certViewerName').textContent = name;
+  document.getElementById('certViewerID').textContent   = 'ID: ' + id;
+  document.getElementById('certViewerDate').textContent = 'Certified on: ' + date;
+  viewer.classList.add('cert-active');
+}
+
+
+/**
+ * Closes the certificate floating viewer.
+ */
+function closeCertViewer() {
+  const viewer = document.getElementById('certViewer');
+  if (viewer) viewer.classList.remove('cert-active');
+}
