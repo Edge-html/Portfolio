@@ -271,7 +271,134 @@ body::before {
   padding-left: var(--space-md);
   line-height: 1.8;
 }
+/* ============================================================
+   INFINITE LOGO SLIDER — Fixed & Polished
+   ============================================================ */
 
+/* Outer viewport: clips horizontal overflow only */
+.slider-track-wrapper {
+    width: 100%;
+    overflow: hidden; 
+    /* INCREASED PADDING: Gives the tooltip "breathing room" so it's not cropped */
+    padding: 60px 0 20px; 
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.slider-track {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: max-content;
+    animation: iconScroll 40s linear infinite;
+    /* Ensure the track allows tooltips to be visible */
+    padding-top: 10px; 
+}
+
+.slider-track-wrapper:hover .slider-track {
+    animation-play-state: paused;
+}
+
+@keyframes iconScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Each icon container */
+.slider-icon-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(13, 34, 56, 0.55);
+    border: 1px solid var(--color-border-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: var(--transition-spring);
+    /* High z-index to ensure the hovered icon stays above others */
+    z-index: 10;
+}
+
+.slider-icon-wrap:hover {
+    z-index: 100; /* Pops to front when hovered */
+    background: rgba(41, 126, 206, 0.18);
+    border-color: var(--color-border-accent);
+    box-shadow: 0 0 0 4px var(--color-accent-subtle), 0 0 20px var(--color-accent-glow);
+    transform: scale(1.15);
+}
+
+.slider-icon-wrap i {
+    font-size: 2rem;
+    color: var(--color-text-secondary);
+    transition: var(--transition-base);
+}
+
+.slider-icon-wrap:hover i {
+    color: var(--color-accent-bright);
+}
+
+/* ============================================================
+   TOOLTIP BOX — Fixed Cropping & Layout
+   ============================================================ */
+.slider-tooltip {
+    position: absolute;
+    /* Move it higher up to avoid the container edge */
+    bottom: calc(100% + 15px); 
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    
+    /* Box Styling */
+    background: rgba(8, 27, 41, 0.98); 
+    color: var(--color-text-primary);
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1.5px solid var(--color-accent);
+    
+    /* Typography */
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    
+    /* Effects */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* FORCE ABOVE EVERYTHING */
+    z-index: 9999; 
+}
+
+/* The Triangle/Caret */
+.slider-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--color-accent);
+}
+
+.slider-icon-wrap:hover .slider-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .slider-track-wrapper { padding-top: 50px; }
+    .slider-track { gap: 28px; }
+    .slider-icon-wrap { width: 62px; height: 62px; }
+    .slider-tooltip { font-size: 11px; padding: 6px 10px; }
+}
 /* ============================================================
    ABOUT SECTION — SPLIT-SCREEN FLEXBOX LAYOUT
    ============================================================ */
