@@ -1,58 +1,72 @@
 /* ============================================================
-   MEDIAQUERIES.CSS — 90s Retro Adjustments
+   MEDIAQUERIES.CSS — NEWSPRINT ADJUSTMENTS
    ============================================================ */
 
 /* Mobile view */
 @media (max-width: 768px) {
-  /* No hamburger in the 90s, but we keep the nav simple */
+  /* Collapse nav */
   .nav-bar {
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 16px;
+    padding: 16px;
   }
   
   .nav-bar a {
-    font-size: 14px;
-    padding: 2px 4px;
+    font-size: 12px;
   }
 
-  .home-content h1 {
-    font-size: 2.5rem;
+  /* Headlines */
+  .headline-hero {
+    font-size: clamp(3rem, 15vw, 4rem);
   }
 
-  .about-grid {
+  /* Collapse Grids to single column */
+  .home-split,
+  .about-split,
+  .experience-grid,
+  .project-grid {
     grid-template-columns: 1fr;
   }
   
-  .about-img-wrapper {
-    max-width: 250px;
-    margin: 0 auto;
+  /* Manage borders */
+  .home-split,
+  .about-split,
+  .experience-grid,
+  .project-grid {
+    border-right: none;
+  }
+  
+  /* Remove right borders from single column items */
+  .home-article,
+  .home-sidebar,
+  .about-img-col,
+  .about-text-col,
+  .grid-item,
+  .grid-col {
+    border-right: none;
   }
 
-  /* Table grids collapse to 1 column */
-  .boxes-container, .skills-container, .work-container, .project-boxes, .certificates-container {
-    grid-template-columns: 1fr;
+  /* Slider spacing */
+  .slider-icon-wrap {
+    width: 60px;
+    height: 60px;
+  }
+  .slider-icon-wrap i {
+    font-size: 1.5rem;
   }
 
-  .window-content {
-    padding: var(--space-sm);
+  /* Modals */
+  .modal, .cert-viewer {
+    padding: 16px;
   }
 
-  /* Modal scaling */
   .modal-gallery {
     grid-template-columns: 1fr;
   }
   
-  .modal-content, .cert-viewer-card {
-    width: 95%;
-  }
-
-  /* Let marquee scroll smoothly */
-  .marquee-container {
-    font-size: 12px;
-  }
-
-  /* Keep hit counter centered */
-  .hit-counter {
-    font-size: 14px;
+  /* Touch Targets */
+  .home-sci a, .footer-sci a {
+    min-width: 44px;
+    min-height: 44px;
   }
 }

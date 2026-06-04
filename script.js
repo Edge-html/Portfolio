@@ -166,11 +166,98 @@ document.addEventListener('DOMContentLoaded', function () {
     const viewer = document.getElementById('certViewer');
     const card   = document.querySelector('.cert-viewer-card');
     if (viewer && viewer.classList.contains('cert-active')) {
-      if (card && !card.contains(e.target) && !e.target.closest('.certificate-box')) {
+      if (card && !card.contains(e.target) && !e.target.closest('.grid-item')) {
         closeCertViewer();
       }
     }
   });
+
+  // --------------------------------------------------------
+  // 7. REAL-TIME CLOCK
+  // --------------------------------------------------------
+  const dateElement = document.getElementById('current-date');
+  if (dateElement) {
+    function updateClock() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const dateString = now.toLocaleDateString('en-US', options);
+      const timeString = now.toLocaleTimeString('en-US');
+      dateElement.innerText = dateString + ' | ' + timeString;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  }
+
+  // --------------------------------------------------------
+  // 8. MUSIC PLAYER
+  // --------------------------------------------------------
+  const audio = document.getElementById('music-audio');
+  const playBtn = document.getElementById('music-play');
+  const progress = document.getElementById('music-progress');
+  const currentTimeEl = document.getElementById('music-current');
+  const totalTimeEl = document.getElementById('music-total');
+
+  if (audio && playBtn) {
+    const playIcon = document.getElementById('music-play');
+    const playWrapper = document.getElementById('music-play-wrapper');
+    
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return "0:00";
+      const min = Math.floor(seconds / 60);
+      const sec = Math.floor(seconds % 60);
+      return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    audio.addEventListener('loadedmetadata', () => {
+      progress.max = audio.duration;
+      totalTimeEl.textContent = "-" + formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      progress.value = audio.currentTime;
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+      totalTimeEl.textContent = "-" + formatTime(audio.duration - audio.currentTime);
+      const percentage = (audio.currentTime / audio.duration) * 100;
+      progress.style.setProperty('--val', `${percentage}%`);
+    });
+
+    progress.addEventListener('input', () => {
+      audio.currentTime = progress.value;
+      const percentage = (progress.value / audio.duration) * 100;
+      progress.style.setProperty('--val', `${percentage}%`);
+    });
+
+    playWrapper.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playIcon.classList.replace('bx-play', 'bx-pause');
+      } else {
+        audio.pause();
+        playIcon.classList.replace('bx-pause', 'bx-play');
+      }
+    });
+    
+    audio.addEventListener('ended', () => {
+      playIcon.classList.replace('bx-pause', 'bx-play');
+      progress.value = 0;
+      progress.style.setProperty('--val', `0%`);
+      currentTimeEl.textContent = "0:00";
+      totalTimeEl.textContent = "-" + formatTime(audio.duration);
+    });
+  }
+
+  // --------------------------------------------------------
+  // 9. AUTHOR SLIDESHOW
+  // --------------------------------------------------------
+  const authorSlides = document.querySelectorAll('.author-slideshow img');
+  if (authorSlides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+      authorSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % authorSlides.length;
+      authorSlides[currentSlide].classList.add('active');
+    }, 3500);
+  }
 
 }); // end DOMContentLoaded
 

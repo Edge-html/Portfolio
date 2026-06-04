@@ -16,144 +16,165 @@
 
 <body>
     <!-- ===================== HEADER ===================== -->
-    <header class="header">
-        <div class="marquee-container">
-            <marquee scrollamount="6">🚀 WELCOME TO MY HOMEPAGE! 🚀 UNDER CONSTRUCTION 🚀 BEST VIEWED IN NETSCAPE NAVIGATOR 🚀</marquee>
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-top label-meta">
+                <span>Vol. 1.0</span>
+                <span id="current-date">Thursday, June 4, 2026</span>
+                <span>Davao City Edition</span>
+            </div>
+            <div class="masthead-title">
+                <a href="#" style="text-decoration: none;">
+                    <h1 style="font-family: var(--font-serif); font-size: clamp(3rem, 8vw, 6rem); letter-spacing: -0.02em; text-transform: uppercase;">Ian Carl Solana</h1>
+                </a>
+                <div class="label-meta" style="margin-top: 8px;">Do or Die</div>
+            </div>
         </div>
-
         <nav class="nav-bar" id="navbar">
-            <a href="#" class="logo text-3d text-rainbow">Ian Carl Solana</a>
-            <a href="#home"     id="nav-home">Home</a>
-            <a href="#about"    id="nav-about">About Me</a>
+            <a href="#home"     id="nav-home">Front Page</a>
+            <a href="#about"    id="nav-about">Editorial</a>
             <a href="#projects" id="nav-experience">Experience</a>
-            <a href="#project"  id="nav-projects">Projects</a>
+            <a href="#project"  id="nav-projects">Selected Works</a>
         </nav>
     </header>
 
     <div class="container">
         <!-- ===================== HOME SECTION ===================== -->
-        <section id="home" class="window bevel-outset">
-            <div class="title-bar">
-                <span class="title-bar-text">Welcome.exe</span>
-                <div class="title-bar-controls">
-                    <button class="window-btn">_</button>
-                    <button class="window-btn">☐</button>
-                    <button class="window-btn">X</button>
+        <section id="home" class="grid-container" style="border-right: 1px solid var(--color-fg);">
+            <div class="home-article" style="grid-column: span 8;">
+                <div class="label-meta" style="margin-bottom: 16px; display: inline-block; background: var(--color-fg); color: var(--color-bg); padding: 4px 8px;">Breaking</div>
+                <h1 class="headline-hero">More<br>About Me.</h1>
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 16px 0; color: var(--color-neutral-600); font-style: italic;">Computer Engineering Student & Developer</h3>
+                
+                <p class="drop-cap" style="margin-top: 24px; text-align: justify;">"This is how we know what love is: Jesus Christ laid down his life for us. And we ought to lay down our lives for our brothers and sisters." — 1 John 3:16.</p>
+                
+                <div class="btn-box" style="margin-top: 32px;">
+                    <a href="assets/Ian_Carl_Solana_Resume.pdf" download="Ian_Carl_Solana_Resume" class="btn-primary hard-shadow-hover">Download Résumé</a>
                 </div>
             </div>
             
-            <div class="window-content home-content">
-                <div class="badge-new blink">HOT!</div>
-                <h1 class="text-3d">Hi, I'm Ian.</h1>
-                <h3>Computer Engineering Student</h3>
-                <div class="home-img-wrapper bevel-inset">
-                    <img src="images/pic.png" alt="Ian Carl Solana profile photo" class="home-img" width="200">
+            <div class="home-sidebar" style="grid-column: span 4; display: flex; flex-direction: column;">
+                <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-bg);">
+                    <img src="images/pic.png" alt="Ian Carl Solana profile photo" style="width: 100%; border: 1px solid var(--color-fg); ">
                 </div>
+                <div class="label-meta" style="text-align: center; margin-top: 8px;">Fig. 1.1 — Ian Carl Solana</div>
                 
-                <p>"This is how we know what love is: Jesus Christ laid down his life for us. And we ought to lay down our lives for our brothers and sisters."<br>— 1 John 3:16</p>
+                <div class="divider-heavy"></div>
                 
-                <div class="home-sci" style="margin-top: 16px;">
-                    <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook" class="btn-primary"><i class='bx bxl-facebook-circle'></i> Facebook</a>
-                    <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram" class="btn-primary"><i class='bx bxl-instagram-alt'></i> Instagram</a>
-                    <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub" class="btn-primary"><i class='bx bxl-github'></i> GitHub</a>
-                </div>
-                
-                <div class="btn-box" style="margin-top: 16px;">
-                    <a href="#about" class="btn-primary">Enter Site!</a>
+                <h3 style="font-family: var(--font-serif); font-weight: bold; margin-bottom: 16px;">Connect</h3>
+                <div class="home-sci">
+                    <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook" class="hard-shadow-hover"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram" class="hard-shadow-hover"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub" class="hard-shadow-hover"><i class='bx bxl-github'></i></a>
                 </div>
 
-                <!-- Banana Cat Easter Egg -->
-                <div class="banana-cat-track">
-                    <img src="images/banana-cat.gif" alt="Banana Cat" class="banana-cat">
-                </div>
+
             </div>
         </section>
 
-
-    <hr class="hr-groove">
-
     <!-- ===================== ABOUT SECTION ===================== -->
-    <section id="about" class="window bevel-outset">
-        <div class="title-bar">
-            <span class="title-bar-text">About_Me.txt</span>
-            <div class="title-bar-controls">
-                <button class="window-btn">_</button>
-                <button class="window-btn">☐</button>
-                <button class="window-btn">X</button>
+    <div class="divider-heavy"></div>
+    <section id="about" class="about-split newsprint-texture">
+        <div class="about-img-col">
+            <div class="author-slideshow">
+                <img src="slideshow/181766e6-6dbd-4cbd-9dd4-6cb98a264842.jpg" alt="Author Slide 1" class="active">
+                <img src="slideshow/263abcd3-4ca7-40ae-baf9-fc465973da89.jpg" alt="Author Slide 2">
+                <img src="slideshow/4447a7ae-2461-4355-9ad8-a9ab6c40eebf.jpg" alt="Author Slide 3">
+                <img src="slideshow/d3f719c2-7120-460b-84f0-9721e9db3025.jpg" alt="Author Slide 4">
+                <img src="slideshow/da6a4433-7509-439e-9c80-18ca8952227a.jpg" alt="Author Slide 5">
             </div>
+            <div class="label-meta" style="margin-top: 8px;">Fig. 1.2 — The Author</div>
         </div>
         
-        <div class="window-content white-bg">
-            <div class="about-grid">
-                <div class="about-img-wrapper bevel-inset" style="padding: 4px; max-height: 250px;">
-                    <img src="images/isa.png" alt="Ian Solana profile" class="about-img" style="height: 100%; object-fit: cover;">
+        <div class="about-text-col">
+            <h2 class="headline-section" style="margin-bottom: 24px;">The Story</h2>
+            <p class="drop-cap" style="text-align: justify; margin-bottom: 24px;">I'm a student at Mapúa Malayan Colleges Mindanao, born on February 14, 2004. I love playing guitar—there's something about expressing myself through music that really resonates with me. The way I can create melodies and chords reflects how I see the world, and it's a hobby that helps me unwind and find balance amidst the demands of school.</p>
+            
+            <div style="font-family: var(--font-mono); border: 1px solid var(--color-fg); padding: 12px; display: inline-block; margin-bottom: 24px;">
+                <span class="label-meta">Edition Data</span><br>
+                <strong>Visitors:</strong> 0001997<br>
+                <strong>Est:</strong> 1995
+            </div>
+
+            <!-- MUSIC PLAYER -->
+            <div class="music-player-container">
+                <div class="music-player-cover">
+                    <img src="music/album.jpg" alt="Album Cover" onerror="this.style.display='none'">
                 </div>
-                
-                <div class="about-content">
-                    <h1 class="text-3d">Curated Excellence</h1>
-                    <p>I'm a student at Mapúa Malayan Colleges Mindanao, born on February 14, 2004. I love playing guitar—there's something about expressing myself through music that really resonates with me. The way I can create melodies and chords reflects how I see the world, and it's a hobby that helps me unwind and find balance amidst the demands of school.</p>
-                    
-                    <div class="hit-counter">
-                        Visitors: 0001997 | Since 1995
+                <div class="music-player-info">
+                    <div class="music-header">
+                        <i class='bx bx-chevron-left'></i>
+                        <span>Now Playing</span>
+                        <i class='bx bx-expand'></i>
                     </div>
 
-                    <div class="btn-box" style="margin-top: 16px;">
-                        <a href="assets/Ian_Carl_Solana_Resume.pdf" download="Ian_Carl_Solana_Resume" class="btn-primary">Download CV.doc</a>
+                    <div class="music-details">
+                        <div class="music-text">
+                            <div class="music-artist">BIA</div>
+                            <div class="music-title">WE ON GO</div>
+                        </div>
+                        <i class='bx bxs-heart music-heart'></i>
+                    </div>
+                    
+                    <div class="music-progress-wrapper">
+                        <input type="range" id="music-progress" value="0" min="0" max="100">
+                        <div class="music-time-row">
+                            <span id="music-current">0:00</span>
+                            <span id="music-total">-0:00</span>
+                        </div>
+                    </div>
+
+                    <div class="music-controls">
+                        <i class='bx bx-shuffle' id="music-shuffle"></i>
+                        <i class='bx bx-skip-previous' id="music-prev"></i>
+                        <div class="music-play-btn" id="music-play-wrapper">
+                            <i class='bx bx-play' id="music-play"></i>
+                        </div>
+                        <i class='bx bx-skip-next' id="music-next"></i>
+                        <i class='bx bx-repeat' id="music-repeat"></i>
                     </div>
                 </div>
+                <audio id="music-audio" src="music/BIA - WE ON GO.mp3" preload="metadata"></audio>
             </div>
         </div>
     </section>
 
-
-    <hr class="hr-groove">
-
     <!-- ===================== EXPERIENCE SECTION ===================== -->
-    <section id="projects" class="window bevel-outset">
-        <div class="title-bar">
-            <span class="title-bar-text">Experience_Database.mdb</span>
-            <div class="title-bar-controls">
-                <button class="window-btn">_</button>
-                <button class="window-btn">☐</button>
-                <button class="window-btn">X</button>
-            </div>
-        </div>
-        
-        <div class="window-content yellow-bg">
-
-            <nav class="nav-experience" aria-label="Experience tabs">
+    <div class="divider-heavy"></div>
+    <div class="label-meta" style="margin-bottom: 16px; display: inline-block; background: var(--color-fg); color: var(--color-bg); padding: 4px 8px;">Professional Record</div>
+    <section id="projects" class="grid-container" style="border-right: 1px solid var(--color-fg);">
+        <div class="grid-col" style="grid-column: span 12; border-bottom: 4px solid var(--color-fg); padding: 0;">
+            <nav class="nav-experience" aria-label="Experience tabs" style="display: flex; gap: 24px; padding: 16px; font-family: var(--font-sans); text-transform: uppercase; font-weight: bold;">
                 <a href="#education"   id="education-link">Education</a>
                 <a href="#skills"      id="skills-link">Skills</a>
                 <a href="#work"        id="work-link">Experiences</a>
                 <a href="#certificates" id="certificates-link">Certificates</a>
             </nav>
+        </div>
 
+        <div class="grid-col" style="grid-column: span 12; padding: 0; border: none;">
             <!-- EDUCATION -->
             <section id="education" class="section">
-                <div class="boxes-container" id="education-container">
-                    <div class="education-box">
-                        <h2>Grade School</h2>
+                <div class="experience-grid">
+                    <div class="grid-item">
+                        <div class="label-meta">2010–2016</div>
+                        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0;">Grade School</h3>
                         <p>Perezville Kiddie Care and Learning School Inc.</p>
-                        <br><br>
-                        <p>2010–2016</p>
                     </div>
-                    <div class="education-box">
-                        <h2>High School</h2>
+                    <div class="grid-item">
+                        <div class="label-meta">2016–2020</div>
+                        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0;">High School</h3>
                         <p>Koronadal National Comprehensive High School</p>
-                        <br><br>
-                        <p>2016–2020</p>
                     </div>
-                    <div class="education-box">
-                        <h2>Senior High School</h2>
+                    <div class="grid-item">
+                        <div class="label-meta">2020–2022</div>
+                        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0;">Senior High School</h3>
                         <p>Notre Dame of Marbel University-Integrated Basic Education Department</p>
-                        <br>
-                        <p>2020–2022</p>
                     </div>
-                    <div class="education-box">
-                        <h2>College</h2>
+                    <div class="grid-item">
+                        <div class="label-meta">2022–Present</div>
+                        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0;">College</h3>
                         <p>Mapua Malayan Colleges Mindanao</p>
-                        <br><br>
-                        <p>2022–Present</p>
                     </div>
                 </div>
             </section>
@@ -358,202 +379,189 @@
 
             <!-- WORK / EXPERIENCES -->
             <section id="work" class="section" style="display: none;">
-                <div class="work-container" id="work-container">
-                    <div class="skills-box">
-                        <i class='bx bx-briefcase' style="font-size: 2.5rem; color: rgb(41, 126, 206);"></i>
-                        <h2>Work Experience</h2>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>RWR I.T Solutions Enterprise Co.</h3>
-                                    <div class="badges">
-                                        <span class="badge"><i class='bx bx-user'></i> Helper</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> May 2025 – Nov 2025</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>Margella's Little Kitchen</h3>
-                                    <div class="badges">
-                                        <span class="badge"><i class='bx bx-user'></i> Helper</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Feb 2023 – May 2023</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>Koronadal Essenxia Technologies</h3>
-                                    <div class="badges">
-                                        <span class="badge"><i class='bx bx-user'></i> Helper</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Jan 2021 – Sep 2021</span>
-                                    </div>
-                                </div>
-                            </div>
+                <div style="padding: 24px;">
+                    
+                    <h3 class="headline-section" style="font-size: 2rem; margin-bottom: 24px; border-bottom: 2px solid var(--color-fg); padding-bottom: 8px;">Work Experience</h3>
+                    
+                    <div style="border-left: 2px solid var(--color-fg); padding-left: 24px; margin-left: 12px; display: flex; flex-direction: column; gap: 32px;">
+                        
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -31px; top: 0; width: 12px; height: 12px; background: var(--color-bg); border: 2px solid var(--color-fg);"></div>
+                            <div class="label-meta">Apr 21, 2026 – Present</div>
+                            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 4px 0;">Sf Group of Companies</h3>
+                            <p style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--color-neutral-500);">"Research and Development" and "Data and Systems Innovation" Intern</p>
+                        </div>
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -31px; top: 0; width: 12px; height: 12px; background: var(--color-bg); border: 2px solid var(--color-fg);"></div>
+                            <div class="label-meta">May 2025 – Nov 2025</div>
+                            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 4px 0;">RWR I.T Solutions Enterprise Co.</h3>
+                            <p style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--color-neutral-500);">Helper</p>
+                        </div>
+
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -31px; top: 0; width: 12px; height: 12px; background: var(--color-bg); border: 2px solid var(--color-fg);"></div>
+                            <div class="label-meta">Feb 2023 – May 2023</div>
+                            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 4px 0;">Margella's Little Kitchen</h3>
+                            <p style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--color-neutral-500);">Helper</p>
+                        </div>
+
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -31px; top: 0; width: 12px; height: 12px; background: var(--color-bg); border: 2px solid var(--color-fg);"></div>
+                            <div class="label-meta">Jan 2021 – Sep 2021</div>
+                            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 4px 0;">Koronadal Essenxia Technologies</h3>
+                            <p style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--color-neutral-500);">Helper</p>
                         </div>
                     </div>
-                    <div class="skills-box">
-                        <i class='bx bx-group' style="font-size: 2.5rem; color: rgb(41, 126, 206);"></i>
-                        <h2>Organizational Experience</h2>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>Institute of Computer Engineers of the Philippines</h3>
-                                    <div class="badges">
-                                        <span class="badge"><i class='bx bx-crown'></i> Treasurer</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Aug 2025 – Present</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>Institute of Computer Engineers of the Philippines</h3>
-                                    <div class="badges">
-                                        <span class="badge"><i class='bx bx-id-card'></i> Director of Technicals</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Aug 2024 – Present</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h3>Supreme Student Government - KNCHS</h3>
-                                    <div class="badges">
-                                        <span class="badge"><i class='bx bx-id-card'></i> Business Manager</span>
-                                        <span class="badge"><i class='bx bx-calendar'></i> Apr 2018 – Apr 2019</span>
-                                    </div>
-                                </div>
-                            </div>
+
+                    <h3 class="headline-section" style="font-size: 2rem; margin: 48px 0 24px 0; border-bottom: 2px solid var(--color-fg); padding-bottom: 8px;">Organizational Experience</h3>
+                    
+                    <div style="border-left: 2px solid var(--color-fg); padding-left: 24px; margin-left: 12px; display: flex; flex-direction: column; gap: 32px;">
+                        
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -31px; top: 0; width: 12px; height: 12px; background: var(--color-bg); border: 2px solid var(--color-fg);"></div>
+                            <div class="label-meta">Aug 2025 – Present</div>
+                            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 4px 0;">Institute of Computer Engineers of the Philippines</h3>
+                            <p style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--color-neutral-500);">Treasurer</p>
+                        </div>
+
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -31px; top: 0; width: 12px; height: 12px; background: var(--color-bg); border: 2px solid var(--color-fg);"></div>
+                            <div class="label-meta">Aug 2024 – Present</div>
+                            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 4px 0;">Institute of Computer Engineers of the Philippines</h3>
+                            <p style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--color-neutral-500);">Director of Technicals</p>
+                        </div>
+
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -31px; top: 0; width: 12px; height: 12px; background: var(--color-bg); border: 2px solid var(--color-fg);"></div>
+                            <div class="label-meta">Apr 2018 – Apr 2019</div>
+                            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 4px 0;">Supreme Student Government - KNCHS</h3>
+                            <p style="font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--color-neutral-500);">Business Manager</p>
                         </div>
                     </div>
+
                 </div>
             </section>
 
             <!-- CERTIFICATES -->
             <section id="certificates" class="section" style="display: none;">
-                <div class="certificates-container" id="certificates-container">
+                <div class="experience-grid" id="certificates-container">
 
-                    <div class="certificate-box" onclick="openCertViewer('images/deep.png', 'Deep Learning with TensorFlow', '2b6f8f4a3a854b22a280515bdbea7732', 'April 2026')">
-                        <div class="cert-preview"><img src="images/deep.png" alt="CSS Essentials Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Deep Learning with TensorFlow</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i>Cognitive Class - IBM Developer Skills Network</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2026</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/deep.png', 'Deep Learning with TensorFlow', '2b6f8f4a3a854b22a280515bdbea7732', 'April 2026')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/deep.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">April 2026</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Deep Learning with TensorFlow</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">Cognitive Class - IBM Developer Skills Network</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/css.png', 'CSS Essentials', '71523fa6-914f-41e0-bab8-87feaf3e3c20', 'April 2026')">
-                        <div class="cert-preview"><img src="images/css.png" alt="CSS Essentials Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>CSS Essentials</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> DICT-ITU DTC</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2026</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/css.png', 'CSS Essentials', '71523fa6-914f-41e0-bab8-87feaf3e3c20', 'April 2026')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/css.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">April 2026</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">CSS Essentials</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">DICT-ITU DTC</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/nss.png', 'Network Support and Security', 'b3b123b7-5e35-4825-9b4a-98d1971a6feb', 'April 2026')">
-                        <div class="cert-preview"><img src="images/nss.png" alt="Network Support Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Network Support and Security</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> DICT-ITU DTC</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2026</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/nss.png', 'Network Support and Security', 'b3b123b7-5e35-4825-9b4a-98d1971a6feb', 'April 2026')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/nss.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">April 2026</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Network Support and Security</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">DICT-ITU DTC</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/softskills.png', 'Soft Skills for Information Security Professionals', '0edb38297017c55946042899777e524f', 'June 2025')">
-                        <div class="cert-preview"><img src="images/softskills.png" alt="Soft Skills Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Soft Skills for Information Security Professionals</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/softskills.png', 'Soft Skills for Information Security Professionals', '0edb38297017c55946042899777e524f', 'June 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/softskills.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">June 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Soft Skills for Information Security Professionals</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/python.png', 'Python Essential Training', '26607115f4fe3ff7b92159a2e9154d1f3ac9f68614689f8cded4abd935b39eec', 'June 2025')">
-                        <div class="cert-preview"><img src="images/python.png" alt="Python Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Python Essential Training</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/python.png', 'Python Essential Training', '26607115f4fe3ff7b92159a2e9154d1f3ac9f68614689f8cded4abd935b39eec', 'June 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/python.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">June 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Python Essential Training</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/bash.png', 'Learning Bash Scripting (2021)', '4c0a0a4cfbb9eeaeb37792b734ce830f9cb7e9a935844e438f946a854a730acd', 'June 2025')">
-                        <div class="cert-preview"><img src="images/bash.png" alt="Bash Scripting Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Learning Bash Scripting (2021)</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/bash.png', 'Learning Bash Scripting (2021)', '4c0a0a4cfbb9eeaeb37792b734ce830f9cb7e9a935844e438f946a854a730acd', 'June 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/bash.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">June 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Learning Bash Scripting (2021)</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/ps.png', 'Learning PowerShell', '849cfa4f1e93d0aa72aadca9839903db6bbd46534aa5060d44bece1e44135258', 'June 2025')">
-                        <div class="cert-preview"><img src="images/ps.png" alt="PowerShell Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Learning PowerShell</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/ps.png', 'Learning PowerShell', '849cfa4f1e93d0aa72aadca9839903db6bbd46534aa5060d44bece1e44135258', 'June 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/ps.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">June 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Learning PowerShell</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/protect.png', 'Protecting Your Network with Open Source Software', 'f4f1964f2bc5c9597b978974ce6862e5605606c0253fa0008feabc372659e9e3', 'June 2025')">
-                        <div class="cert-preview"><img src="images/protect.png" alt="Network Protection Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Protecting Your Network with Open Source Software</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/protect.png', 'Protecting Your Network with Open Source Software', 'f4f1964f2bc5c9597b978974ce6862e5605606c0253fa0008feabc372659e9e3', 'June 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/protect.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">June 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Protecting Your Network with Open Source Software</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/wire.png', 'Wireshark: Malware and Forensics', 'f746d257d490b4e5a777b08358ad6de8fb9e151e10e445bc55d29262be7d3494', 'June 2025')">
-                        <div class="cert-preview"><img src="images/wire.png" alt="Wireshark Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Wireshark: Malware and Forensics</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/wire.png', 'Wireshark: Malware and Forensics', 'f746d257d490b4e5a777b08358ad6de8fb9e151e10e445bc55d29262be7d3494', 'June 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/wire.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">June 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Wireshark: Malware and Forensics</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/linux.png', 'Learning Linux Command Line (2023)', '8d53f65b9b3615cce970e8368edf542c231c005d212eea4d8aab2cb957af7c47', 'June 2025')">
-                        <div class="cert-preview"><img src="images/linux.png" alt="Linux Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Learning Linux Command Line (2023)</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/linux.png', 'Learning Linux Command Line (2023)', '8d53f65b9b3615cce970e8368edf542c231c005d212eea4d8aab2cb957af7c47', 'June 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/linux.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">June 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Learning Linux Command Line (2023)</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/net.png', 'Network Forensics (2019)', 'b49cec1b7d667b2a306a3e93980fadea63c73c9f923fdfa7b9e9432e79b8928d', 'June 2025')">
-                        <div class="cert-preview"><img src="images/net.png" alt="Network Forensics Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Network Forensics (2019)</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> June 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/net.png', 'Network Forensics (2019)', 'b49cec1b7d667b2a306a3e93980fadea63c73c9f923fdfa7b9e9432e79b8928d', 'June 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/net.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">June 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Network Forensics (2019)</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/os.png', 'Operating System Forensics (2019)', 'e7d7105082a498a26bdbd3d1ee64b2fe85b0c3b87edb3e5255c18ba6959fb30d', 'April 2025')">
-                        <div class="cert-preview"><img src="images/os.png" alt="OS Forensics Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Operating System Forensics (2019)</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/os.png', 'Operating System Forensics (2019)', 'e7d7105082a498a26bdbd3d1ee64b2fe85b0c3b87edb3e5255c18ba6959fb30d', 'April 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/os.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">April 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Operating System Forensics (2019)</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
-                    <div class="certificate-box" onclick="openCertViewer('images/lcf.png', 'Learning Computer Forensics', '39bc5f6843a77ddfb88ea7f19b384ec8e97b60b04b3b3842b395322c3c3043ae', 'April 2025')">
-                        <div class="cert-preview"><img src="images/lcf.png" alt="Computer Forensics Certificate" class="cert-img"><div class="cert-zoom-hint"><i class='bx bx-zoom-in'></i></div></div>
-                        <div class="cert-info">
-                            <h2>Learning Computer Forensics</h2>
-                            <p class="cert-issuer"><i class='bx bx-building'></i> LinkedIn Learning</p>
-                            <p class="cert-date"><i class='bx bx-calendar-check'></i> April 2025</p>
-                        </div>
-                    </div>
+                    <div class="grid-item hard-shadow-hover" onclick="openCertViewer('images/lcf.png', 'Learning Computer Forensics', '39bc5f6843a77ddfb88ea7f19b384ec8e97b60b04b3b3842b395322c3c3043ae', 'April 2025')" style="cursor:pointer;">
+    <div style="border: 1px solid var(--color-fg); padding: 4px; background: var(--color-neutral-100); margin-bottom: 12px;">
+        <img src="images/lcf.png" alt="Certificate" style="width:100%; border:1px solid var(--color-fg);">
+    </div>
+    <div class="label-meta">April 2025</div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 8px 0;">Learning Computer Forensics</h3>
+    <p style="font-family: var(--font-sans); font-size: 12px; text-transform: uppercase;">LinkedIn Learning</p>
+</div>
 
                 </div>
             </section>
@@ -564,189 +572,190 @@
     <hr class="hr-groove">
 
     <!-- ===================== PROJECTS SECTION ===================== -->
-    <section id="project" class="window bevel-outset">
-        <div class="title-bar">
-            <span class="title-bar-text">Selected_Works.exe</span>
-            <div class="title-bar-controls">
-                <button class="window-btn">_</button>
-                <button class="window-btn">☐</button>
-                <button class="window-btn">X</button>
-            </div>
-        </div>
-        
-        <div class="window-content white-bg">
-            <p>A curated collection of projects from my academic journey.</p>
+    <div class="divider-heavy"></div>
+    <div class="label-meta" style="margin-bottom: 16px; display: inline-block; background: var(--color-fg); color: var(--color-bg); padding: 4px 8px;">Selected Works</div>
+    <section id="project" class="project-grid" style="border-right: 1px solid var(--color-fg);">
 
-            <div class="project-boxes">
-
-                <div class="project-box" onclick="openModal(
+                <div class="grid-item hard-shadow-hover" onclick="openModal(
                     'DeepLabv3+ for Brain Tumor Segmentation', 
                     'Model Validation & Optimization', 
                     '<h3 class=\'modal-sub-header\'>Introduction & Purpose</h3> Deep learning has become a fundamental technology in neuro-oncology, where automated analysis is vital for improving diagnostic accuracy and reducing clinician workload. Precise delineation of tumor boundaries is essential for treatment planning, surgical guidance, and monitoring disease progression. The primary objective of this study was to implement a robust segmentation model for brain tumor detection in MRI scans and evaluate the impact of different optimization strategies—specifically Adam and SGD—on training convergence and spatial precision. <br><br> <h3 class=\'modal-sub-header\'>Software Architecture & Methodology</h3> This research utilized a modified DeepLabv3+ architecture, an encoder-decoder framework designed to capture multi-scale contextual information. The network utilized an Atrous Spatial Pyramid Pooling (ASPP) block featuring parallel dilated convolutions with rates of 6, 12, and 18. This allowed the model to detect tumors of varying sizes without increasing parameter counts. Critical skip connections were integrated to combine low-level feature maps from the early encoder stages with high-level semantic features in the decoder, essential for recovering fine spatial details typically lost during downsampling. To address the class imbalance inherent in medical imaging, the model employed the Focal Tversky Loss function.<br><br> <h3 class=\'modal-sub-header\'>Optimization Results</h3> The study compared the adaptive Adam optimizer against Stochastic Gradient Descent (SGD) with momentum. While baseline SGD trials showed a slow learning trend, hyperparameter tuning—increasing training to 40 epochs and adjusting the Adam learning rate to 5e-5—allowed the model to break through performance plateaus. The final tuned model achieved a 111% improvement in segmentation performance, reaching a Dice Coefficient of 0.7816 and an IoU of 0.6440. Notably, the discriminative power of the model improved dramatically, reducing False Positives by 82.7% and False Negatives by 68.1%.', 
                     ['brain1', 'brain2', 'brain3', 'brain4']
-                )">
-                    <h4>DeepLabv3+ for Brain Tumor Segmentation</h4>
-                    <p1>Role: Model Validation</p1>
-                    <p>Automating brain tumor boundary analysis with modified DeepLabv3+ for high-precision medical imaging.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bxl-python'></i></span>
+                )" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Model Validation</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">DeepLabv3+ for Brain Tumor Segmentation</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">Automating brain tumor boundary analysis with modified DeepLabv3+ for high-precision medical imaging.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bxl-python'></i></span>
                         <span class="badge"><i class='bx bx-brain'></i></span>
-                    </div>
-                </div>
+    </div>
+</div>
 
-                <div class="project-box" onclick="openModal(
+                <div class="grid-item hard-shadow-hover" onclick="openModal(
                     'AI-Powered Coral Health Assessment', 
                     'Machine Learning Model Developer', 
                     '<h3 class=\'modal-sub-header\'>Introduction & Background</h3> Coral reefs are vital to Philippine marine biodiversity and coastal economies, yet they face a catastrophic decline due to climate-driven bleaching. Traditional manual monitoring is labor-intensive and lacks scalability. This study proposes an automated diagnostic framework that fills this gap by integrating semantic segmentation and targeted classification to evaluate reef health objectively and at scale.<br><br> <h3 class=\'modal-sub-header\'>Research Objectives</h3> • To implement a <b>U-Net segmentation model</b> that isolates coral regions from complex underwater imagery.<br>• To develop a high-efficiency classification model using <b>EfficientNet-B0</b> to distinguish between healthy and bleached coral tissue.<br>• To evaluate the end-to-end performance of the integrated two-stage pipeline using unseen test datasets.<br><br> <h3 class=\'modal-sub-header\'>Software Architecture</h3> <table class=\'project-data-table\'><thead><tr><th>Component</th><th>Technical Implementation</th></tr></thead><tbody><tr><td><b>Segmentation (U-Net)</b></td><td>Encoder-decoder path with skip-connections for spatial resolution.</td></tr><tr><td><b>Classification (EfficientNet-B0)</b></td><td>Transfer learning approach with a custom binary classifier head.</td></tr><tr><td><b>Preprocessing</b></td><td>Standardized 256x256 resizing and HSV color-space mask generation.</td></tr></tbody></table><br> <h3 class=\'modal-sub-header\'>Experimental Results</h3> The integrated system achieved an <b>overall accuracy of 82.00%</b>. The U-Net model reached 76.24% pixel accuracy, while the EfficientNet-B0 classifier achieved 88.00% accuracy on unsegmented data. The study confirmed that a dual-phase approach significantly reduces confounding variables by ensuring the classifier focuses exclusively on isolated coral tissue.', 
                     ['coral']
-                )">
-                    <h4>AI-Powered Coral Health Assessment</h4>
-                    <p1>Role: Machine Learning Model Developer</p1>
-                    <p>A two-stage deep learning framework designed to automate the monitoring of Philippine coral reefs.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bxl-python'></i></span>
+                )" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Machine Learning Model Developer</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">AI-Powered Coral Health Assessment</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">A two-stage deep learning framework designed to automate the monitoring of Philippine coral reefs.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bxl-python'></i></span>
                         <span class="badge"><i class='bx bx-analyse'></i></span>
-                    </div>
-                </div>
+    </div>
+</div>
 
-                <div class="project-box" onclick="openModal(
+                <div class="grid-item hard-shadow-hover" onclick="openModal(
                     'Color Vision Deficiency Screening System', 
                     'Lead Researcher & Hardware Programmer', 
                     '<h3 class=\'modal-sub-header\'>Introduction & Purpose</h3> Color vision deficiency (CVD) affects approximately 1 in 12 men worldwide. While digital apps exist, they are often inconsistent due to screen calibration variables. The primary objective of this research was to design a fully autonomous, low-cost color vision tester using the ESP32 platform. This handheld device replicates clinical Ishihara tests independently of external software, making it a reliable tool for screening in resource-constrained communities.<br><br> <h3 class=\'modal-sub-header\'>Software Architecture & Hardware</h3> The system utilizes a specialized embedded processing algorithm that evaluates user input in real-time against pre-defined clinical response patterns.<br><br> <table class=\'project-data-table\'><thead><tr><th>Component</th><th>Technical Implementation</th></tr></thead><tbody><tr><td><b>Microcontroller</b></td><td>ESP32 managing SPI communication and GPIO polling.</td></tr><tr><td><b>Display</b></td><td>2.8-inch IPS TFT LCD rendering 24-bit BMP Ishihara plates.</td></tr><tr><td><b>Input Interface</b></td><td>4x4 Matrix Keypad with debouncing logic for data integrity.</td></tr><tr><td><b>Feedback System</b></td><td>Closed-loop interaction using visual LCD results and auditory tones.</td></tr></tbody></table><br> <h3 class=\'modal-sub-header\'>Diagnostic Accuracy & Results</h3> The device achieved an <b>overall diagnostic accuracy of 95.6%</b> across 45 systematic trials. The system correctly identified 100% of Normal Vision profiles and 93.3% of Protanopia and Deuteranopia cases. The embedded logic is designed for \&quot;safe-fail\&quot; operation, ensuring red-green deficiency warnings rather than incorrect specific diagnoses. With an average image load time of less than 1 second, the device proved to be a robust tool for field deployment.', 
                     ['ishihara', 'ishihara2', 'ishihara3']
-                )">
-                    <h4>Color Vision Deficiency Screening System</h4>
-                    <p1>Role: Lead Researcher / Hardware Programmer</p1>
-                    <p>A portable, standalone diagnostic tool replicating clinical Ishihara tests using an ESP32 microcontroller.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bx-chip'></i></span>
+                )" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Lead Researcher / Hardware Programmer</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">Color Vision Deficiency Screening System</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">A portable, standalone diagnostic tool replicating clinical Ishihara tests using an ESP32 microcontroller.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bx-chip'></i></span>
                         <span class="badge"><i class='bx bx-scan'></i></span>
-                    </div>
-                </div>
+    </div>
+</div>
 
-                <div class="project-box" onclick="openModal(
+                <div class="grid-item hard-shadow-hover" onclick="openModal(
                     'Snake Dash: Academic Challenge', 
                     'Lead Android Developer', 
                     '<h3 class=\'modal-sub-header\'>Brief Introduction</h3> Snakedash is a modern reimagining of the classic Snake game, designed with a humorous academic twist. Players control a student-themed snake navigating through university life, collecting grades to grow and earn points.<br><br> <h3 class=\'modal-sub-header\'>Project Objectives</h3> • To recreate classic mechanics while introducing a student-centric theme.<br>• To provide personalized gameplay through student avatar selection.<br>• To implement a secure backend using <b>Firebase</b> for real-time synchronization of leaderboards and statistics.<br>• To deliver a modern visual experience with fluid animations using <b>Jetpack Compose</b>.<br><br> <h3 class=\'modal-sub-header\'>Technical Features</h3> <table class=\'project-data-table\'><thead><tr><th>Feature</th><th>Implementation Detail</th></tr></thead><tbody><tr><td><b>Framework</b></td><td>Jetpack Compose for declarative UI.</td></tr><tr><td><b>Backend</b></td><td>Firebase Authentication and Real-time Database.</td></tr><tr><td><b>Multiplayer</b></td><td>Integrated competitive mode for real-time academic leaderboards.</td></tr></tbody></table><br> <h3 class=\'modal-sub-header\'>Core Gameplay</h3> The game serves as both a functional, nostalgic game and a robust demonstration of cloud-integrated mobile application design.', 
                     ['snake']
-                )">
-                    <h4>Snake Dash</h4>
-                    <p1>Role: Lead Android Developer</p1>
-                    <p>A modern take on the classic Snake game with an academic twist, featuring Firebase integration and Jetpack Compose.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bxl-android'></i></span>
+                )" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Lead Android Developer</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">Snake Dash</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">A modern take on the classic Snake game with an academic twist, featuring Firebase integration and Jetpack Compose.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bxl-android'></i></span>
                         <span class="badge"><i class='bx bxl-firebase'></i></span>
-                    </div>
-                </div>
+    </div>
+</div>
 
-                <div class="project-box" onclick="openModal(
+                <div class="grid-item hard-shadow-hover" onclick="openModal(
                     'SAP RISC-V Single-Cycle CPU', 
                     'Lead Control Unit Designer / Verilog Programmer', 
                     '<h3 class=\'modal-sub-header\'>Project Overview</h3> This project involved the design of a Simple-As-Possible (SAP) computer using a Single-Cycle Datapath based on the RISC-V ISA. The system was implemented and simulated using Verilog in Xilinx ISE, focusing on the fundamental Fetch-Decode-Execute cycle.<br><br> <h3 class=\'modal-sub-header\'>Software Architecture & Logic</h3> The architecture follows a single-cycle design where every instruction is completed in one clock cycle. A primary innovation was the implementation of the <b>Control Unit (CU)</b>, which generates specific control signals based on instruction opcodes. <br><br> <table class=\'project-data-table\'><thead><tr><th>Core Component</th><th>Implementation Detail</th></tr></thead><tbody><tr><td><b>Program Counter</b></td><td>Registers instruction addresses and increments by 4.</td></tr><tr><td><b>ALU</b></td><td>Executes R-type and I-type instructions (ADD, SUB, AND, OR).</td></tr><tr><td><b>Register File</b></td><td>A dual-port 32-register bank for simultaneous reads.</td></tr><tr><td><b>Imm Generator</b></td><td>Extracts and sign-extends values from I, S, and B-type instructions.</td></tr></tbody></table><br> <h3 class=\'modal-sub-header\'>Design & Simulation Results</h3> The CPU was verified through a custom assembly program. Simulations confirmed the successful execution of complex instructions, including branching (BEQ) and data movement (LW/SW), with 100% logic accuracy.', 
                     ['risc'] 
-                )">
-                    <h4>SAP RISC-V Single-Cycle CPU</h4>
-                    <p1>Role: Control Unit Designer</p1>
-                    <p>A simplified RISC-V processor model implemented in Verilog to demonstrate the core fetch-decode-execute cycle.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bx-chip'></i></span>
+                )" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Control Unit Designer</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">SAP RISC-V Single-Cycle CPU</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">A simplified RISC-V processor model implemented in Verilog to demonstrate the core fetch-decode-execute cycle.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bx-chip'></i></span>
                         <span class="badge"><i class='bx bx-code-block'></i></span>
-                    </div>
-                </div>
+    </div>
+</div>
 
-                <div class="project-box" onclick="openModal(
+                <div class="grid-item hard-shadow-hover" onclick="openModal(
                     'Sakay Ta!: Transportation Service App', 
                     'Lead Programmer', 
                     '<h3 class=\'modal-sub-header\'>Introduction & Background</h3> Sakay Ta! was conceptualized to enhance the commuting experience in Davao by offering a transportation service that integrates taxi and motorcycle options into a single platform using C#.<br><br> <h3 class=\'modal-sub-header\'>Project Objectives</h3> • To provide a reliable and prompt transportation solution.<br>• To prioritize user safety through driver background checks and real-time tracking.<br>• To create an intuitive interface for seamless booking.<br><br> <h3 class=\'modal-sub-header\'>Technical Implementation</h3> <table class=\'project-data-table\'><thead><tr><th>Component</th><th>Implementation Detail</th></tr></thead><tbody><tr><td><b>Language</b></td><td>C# using the .NET framework.</td></tr><tr><td><b>UI/UX Design</b></td><td>Windows Forms (WinForms) for a desktop-based interface.</td></tr><tr><td><b>Safety Systems</b></td><td>Integrated tracking logic and emergency alert triggers.</td></tr></tbody></table>', 
                     ['sakay', 'sakay2', 'sakay3', 'sakay4']
-                )">
-                    <h4>Sakay Ta!</h4>
-                    <p1>Role: Lead Programmer</p1>
-                    <p>A regional booking application providing seamless transportation services across Mindanao.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bx-code-block'></i></span>
+                )" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Lead Programmer</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">Sakay Ta!</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">A regional booking application providing seamless transportation services across Mindanao.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bx-code-block'></i></span>
                         <span class="badge"><i class='bx bxs-data'></i></span>
-                    </div>
-                </div>
+    </div>
+</div>
 
-                <div class="project-box" onclick="openModal(
+                <div class="grid-item hard-shadow-hover" onclick="openModal(
                     'Presensya: RFID Attendance & Lab Tracker', 
                     'Lead Programmer', 
                     '<h3 class=\'modal-sub-header\'>Introduction</h3> Presensya is a smart lab management system that simplifies attendance tracking and monitors real-time PC status using RFID technology.<br><br> <h3 class=\'modal-sub-header\'>Project Objectives</h3> • To automate student registration via <b>RFID technology</b>.<br>• To provide a real-time dashboard for managing hardware availability.<br>• To generate detailed usage reports for lab administrators.<br><br> <h3 class=\'modal-sub-header\'>Technical Implementation</h3> <table class=\'project-data-table\'><thead><tr><th>Component</th><th>Technical Detail</th></tr></thead><tbody><tr><td><b>Hardware</b></td><td>MFRC522 RFID module for high-frequency identification.</td></tr><tr><td><b>Software Stack</b></td><td>C# focusing on efficient Data Structures for logging.</td></tr><tr><td><b>Database</b></td><td>Integrated system for secure attendance records.</td></tr></tbody></table>', 
                     ['presensya', 'presensya2', 'presensya3', 'presensya4', 'presensya5', 'presensya6']
-                )">
-                    <h4>Presensya</h4>
-                    <p1>Role: Lead Programmer</p1>
-                    <p>An IoT-enabled attendance tracker for MMCM labs using RFID technology for instant student check-ins.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bx-rfid'></i></span>
+                )" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Lead Programmer</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">Presensya</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">An IoT-enabled attendance tracker for MMCM labs using RFID technology for instant student check-ins.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bx-rfid'></i></span>
                         <span class="badge"><i class='bx bxs-data'></i></span>
-                    </div>
-                </div>
+    </div>
+</div>
 
-                <div class="project-box" onclick="openModal('Lazy Eye\'s Music Studio', 'Lead Programmer', 'A comprehensive management system for music studios, handling instrument rentals, tutorial scheduling, and retail sales.', ['music_studio'])">
-                    <h4>Lazy Eye's Music Studio</h4>
-                    <p1>Role: Lead Programmer</p1>
-                    <p>A specialized management platform for musicians to book rehearsals and manage tutorials.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bxl-python'></i></span>
-                    </div>
-                </div>
+                <div class="grid-item hard-shadow-hover" onclick="openModal('Lazy Eye\'s Music Studio', 'Lead Programmer', 'A comprehensive management system for music studios, handling instrument rentals, tutorial scheduling, and retail sales.', ['music_studio'])" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Lead Programmer</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">Lazy Eye's Music Studio</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">A specialized management platform for musicians to book rehearsals and manage tutorials.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bxl-python'></i></span>
+    </div>
+</div>
 
-                <div class="project-box" onclick="openModal('The Fall of John Paul', 'Frontend/Graphic Designer', 'An interactive game following a student\'s journey toward graduation, featuring custom-designed obstacles and enemies.', ['game_project'])">
-                    <h4>The Fall of John Paul</h4>
-                    <p1>Role: Frontend/Graphic Designer</p1>
-                    <p>A narrative-driven game about overcoming academic challenges on the road to graduation.</p>
-                    <div class="badges">
-                        <span class="badge"><i class='bx bxl-java'></i></span>
+                <div class="grid-item hard-shadow-hover" onclick="openModal('The Fall of John Paul', 'Frontend/Graphic Designer', 'An interactive game following a student\'s journey toward graduation, featuring custom-designed obstacles and enemies.', ['game_project'])" style="cursor:pointer; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <div class="label-meta">Frontend/Graphic Designer</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin: 8px 0; line-height: 1.2;">The Fall of John Paul</h3>
+        <p style="margin-bottom: 16px; text-align: justify;">A narrative-driven game about overcoming academic challenges on the road to graduation.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <span class="badge"><i class='bx bxl-java'></i></span>
                         <span class="badge"><i class='bx bxl-c-plus-plus'></i></span>
-                    </div>
-                </div>
+    </div>
+</div>
 
             </div>
         </div>
     </section>
-    
-    <hr class="hr-groove">
+
+    <div class="divider-heavy"></div>
 
     <!-- ===================== PROJECT MODAL ===================== -->
     <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content window bevel-outset">
-            <div class="title-bar">
-                <span class="title-bar-text">Project_Details.exe</span>
-                <div class="title-bar-controls">
-                    <button class="window-btn">_</button>
-                    <button class="window-btn">☐</button>
-                    <button class="window-btn close-modal" aria-label="Close modal">X</button>
-                </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="label-meta">Edition Detail</div>
+                <button class="close-modal" aria-label="Close modal">X</button>
             </div>
-            <div class="window-content white-bg">
-                <h2 id="modalTitle" class="text-3d"></h2>
-                <span id="modalRole" style="display:block; margin: 10px 0; font-weight:bold; color: var(--color-link); font-size:11px; text-transform:uppercase; letter-spacing:2px;"></span>
+            <div class="modal-body">
+                <h2 id="modalTitle" style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1; margin-bottom: 8px;"></h2>
+                <span id="modalRole" style="display:block; margin-bottom: 24px; font-weight:bold; color: var(--color-accent); font-family: var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:0.1em;"></span>
+                
                 <div id="modalGallery" class="modal-gallery"></div>
                 <div id="modalTableContainer" class="modal-table-container"></div>
-                <p id="modalDesc"></p>
+                
+                <p id="modalDesc" style="text-align: justify; margin-top: 24px;"></p>
             </div>
         </div>
     </div>
 
     <!-- ===================== CERTIFICATE FLOATING VIEWER ===================== -->
     <div id="certViewer" class="cert-viewer" role="dialog" aria-modal="true">
-        <div class="cert-viewer-card window bevel-outset">
-            <div class="title-bar">
-                <span class="title-bar-text">Certificate_Viewer.exe</span>
-                <div class="title-bar-controls">
-                    <button class="window-btn">_</button>
-                    <button class="window-btn">☐</button>
-                    <button class="window-btn cert-viewer-close" onclick="closeCertViewer()" aria-label="Close certificate viewer">X</button>
-                </div>
+        <div class="cert-viewer-card">
+            <div class="modal-header">
+                <div class="label-meta">Certificate Verification</div>
+                <button class="cert-viewer-close" onclick="closeCertViewer()" aria-label="Close certificate viewer">X</button>
             </div>
-            <div class="window-content white-bg">
+            <div class="modal-body" style="padding: 16px;">
                 <img id="certViewerImg" src="" alt="Certificate" class="cert-viewer-img">
                 <div class="cert-viewer-caption">
-                    <p id="certViewerName" class="cert-viewer-name" style="font-weight: bold;"></p>
-                    <p id="certViewerID"   class="cert-viewer-id" style="font-family: var(--font-mono);"></p>
-                    <p id="certViewerDate" class="cert-viewer-date" style="font-family: var(--font-mono); color: var(--color-muted);"></p>
+                    <p id="certViewerName" class="cert-viewer-name" style="font-weight: bold; font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 8px;"></p>
+                    <p id="certViewerID"   class="cert-viewer-id"></p>
+                    <p id="certViewerDate" class="cert-viewer-date"></p>
                 </div>
             </div>
         </div>
@@ -754,22 +763,15 @@
 
     </div> <!-- Close .container -->
 
-    <hr class="hr-groove">
-
     <!-- ===================== FOOTER ===================== -->
-    <footer class="window bevel-outset" style="margin: 0 var(--space-md) var(--space-xl) var(--space-md);">
-        <div class="title-bar">
-            <span class="title-bar-text">Footer.sys</span>
-        </div>
-        <div class="window-content yellow-bg footer-content">
-            <p style="font-family: var(--font-mono); font-weight: bold;">&copy; 1997 Ian Carl Solana</p>
+    <footer>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="label-meta" style="margin-bottom: 16px;">Ian Carl Solana — Printed in Davao City</div>
+            <p style="font-family: var(--font-mono); font-weight: bold;">&copy; 2026 Ian Carl Solana. All Rights Reserved.</p>
             <div class="footer-sci">
-                <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-            </div>
-            <div class="hit-counter" style="margin-top: 8px;">
-                Visitors: 0001997
+                <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook" class="hard-shadow-hover"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram" class="hard-shadow-hover"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub" class="hard-shadow-hover"><i class='bx bxl-github'></i></a>
             </div>
         </div>
     </footer>
