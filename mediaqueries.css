@@ -1,162 +1,58 @@
 /* ============================================================
-   MEDIAQUERIES.CSS — Luxury / Editorial Responsive Adjustments
+   MEDIAQUERIES.CSS — 90s Retro Adjustments
    ============================================================ */
 
-/* ============================================================
-   TABLET (Max 1024px)
-   ============================================================ */
-@media (max-width: 1024px) {
-  .header {
-    padding: 24px 32px;
-  }
-  
-  .header.scrolled {
-    padding: 16px 32px;
-  }
-
-  /* Gridlines */
-  .gridlines {
-    padding: 0 32px;
-  }
-
-  /* Sections */
-  #home, #about, #projects, #project {
-    padding: 96px 32px 48px;
-  }
-  
-  /* Home */
-  .home-container {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .home-img-wrapper {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .home-content h1 {
-    font-size: clamp(3rem, 7vw, 5rem);
-  }
-
-  /* About */
-  .about-container {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-  }
-  .about-img-wrapper {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .about-content h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-  }
-
-  /* Lists */
-  .boxes-container, .skills-container, .work-container, .certificates-container, .project-boxes {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-  
-  .education-box, .skills-box, .work-box, .certificate-box, .project-box {
-    width: 100%;
-  }
-
-  /* Footer */
-  footer {
-    padding: 48px 32px;
-    flex-direction: column;
-    gap: 24px;
-    text-align: center;
-  }
-}
-
-/* ============================================================
-   MOBILE (Max 768px)
-   ============================================================ */
+/* Mobile view */
 @media (max-width: 768px) {
-  
-  /* Navbar / Hamburger */
-  .hamburger {
-    display: flex;
-  }
-  
-  .navbar {
-    display: none; /* Hide for slide-in menu logic if it exists in script.js */
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100vh;
-    background: var(--color-bg-primary);
-    border-left: 1px solid var(--color-border-subtle);
-    padding: 80px 32px;
-    gap: 24px;
-    z-index: 1050;
-    transform: translateX(100%);
-  }
-
-  .navbar.open {
-    display: flex;
-    transform: translateX(0);
-  }
-
-  /* Home */
-  .home-content h1 {
-    font-size: 3rem;
-  }
-  .home-content .decorative-line {
-    width: 32px;
-  }
-
-  /* About */
-  .about-content h1 {
-    font-size: 2.5rem;
-  }
-  .about-content .drop-cap::first-letter {
-    font-size: 5rem;
-  }
-
-  /* Gridlines */
-  .gridlines {
-    padding: 0 16px;
-  }
-
-  /* Sections */
-  #home, #about, #projects, #project {
-    padding: 80px 24px 40px;
-  }
-
-  .section-header h1 {
-    font-size: 2.5rem;
-  }
-
-  /* Nav Experience */
-  .nav-experience {
+  /* No hamburger in the 90s, but we keep the nav simple */
+  .nav-bar {
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 8px;
+  }
+  
+  .nav-bar a {
+    font-size: 14px;
+    padding: 2px 4px;
   }
 
-  .project-box h4 {
-    font-size: 24px;
+  .home-content h1 {
+    font-size: 2.5rem;
   }
 
-  /* Modal */
-  .modal {
-    padding: 24px 16px;
+  .about-grid {
+    grid-template-columns: 1fr;
   }
-  .close-modal {
-    top: 16px;
-    right: 16px;
-    font-size: 32px;
+  
+  .about-img-wrapper {
+    max-width: 250px;
+    margin: 0 auto;
   }
-  #modalTitle {
-    font-size: 2rem;
+
+  /* Table grids collapse to 1 column */
+  .boxes-container, .skills-container, .work-container, .project-boxes, .certificates-container {
+    grid-template-columns: 1fr;
   }
+
+  .window-content {
+    padding: var(--space-sm);
+  }
+
+  /* Modal scaling */
   .modal-gallery {
     grid-template-columns: 1fr;
+  }
+  
+  .modal-content, .cert-viewer-card {
+    width: 95%;
+  }
+
+  /* Let marquee scroll smoothly */
+  .marquee-container {
+    font-size: 12px;
+  }
+
+  /* Keep hit counter centered */
+  .hit-counter {
+    font-size: 14px;
   }
 }

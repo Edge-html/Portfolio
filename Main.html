@@ -10,33 +10,19 @@
     <!-- CSS -->
     <link rel="stylesheet" href="Main.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <div class="noise-overlay"></div>
-    <div class="gridlines">
-        <div class="gridline"></div>
-        <div class="gridline"></div>
-        <div class="gridline"></div>
-        <div class="gridline"></div>
-    </div>
     <!-- ===================== HEADER ===================== -->
-    <header class="header animate-header">
-        <a href="#" class="logo">Ian Carl Solana</a>
+    <header class="header">
+        <div class="marquee-container">
+            <marquee scrollamount="6">🚀 WELCOME TO MY HOMEPAGE! 🚀 UNDER CONSTRUCTION 🚀 BEST VIEWED IN NETSCAPE NAVIGATOR 🚀</marquee>
+        </div>
 
-        <!-- Hamburger (shown on tablet/mobile) -->
-        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="navbar" id="navbar">
+        <nav class="nav-bar" id="navbar">
+            <a href="#" class="logo text-3d text-rainbow">Ian Carl Solana</a>
             <a href="#home"     id="nav-home">Home</a>
             <a href="#about"    id="nav-about">About Me</a>
             <a href="#projects" id="nav-experience">Experience</a>
@@ -44,67 +30,96 @@
         </nav>
     </header>
 
-    <!-- Overlay backdrop for mobile nav -->
-    <div class="nav-overlay" id="navOverlay"></div>
-
-
-    <!-- ===================== HOME SECTION ===================== -->
-    <section id="home" class="home animate-section">
-        <div class="home-container">
-            <div class="home-content">
-                <div class="decorative-line"></div>
-                <h3>Editorial / Vol. 01</h3>
-                <h1>Hi, I'm <span class="italic">Ian.</span></h1>
-                <p>"This is how we know what love is: Jesus Christ laid down his life for us. And we ought to lay down our lives for our brothers and sisters." — 1 John 3:16</p>
-                <div class="home-sci">
-                    <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
-                    <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
-                    <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-                </div>
-                <div class="btn-box">
-                    <a href="#about" class="btn-primary">
-                        <span class="btn-text">About Me</span>
-                        <span class="btn-overlay"></span>
-                    </a>
+    <div class="container">
+        <!-- ===================== HOME SECTION ===================== -->
+        <section id="home" class="window bevel-outset">
+            <div class="title-bar">
+                <span class="title-bar-text">Welcome.exe</span>
+                <div class="title-bar-controls">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">☐</button>
+                    <button class="window-btn">X</button>
                 </div>
             </div>
+            
+            <div class="window-content home-content">
+                <div class="badge-new blink">HOT!</div>
+                <h1 class="text-3d">Hi, I'm Ian.</h1>
+                <h3>Computer Engineering Student</h3>
+                <div class="home-img-wrapper bevel-inset">
+                    <img src="images/pic.png" alt="Ian Carl Solana profile photo" class="home-img" width="200">
+                </div>
+                
+                <p>"This is how we know what love is: Jesus Christ laid down his life for us. And we ought to lay down our lives for our brothers and sisters."<br>— 1 John 3:16</p>
+                
+                <div class="home-sci" style="margin-top: 16px;">
+                    <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook" class="btn-primary"><i class='bx bxl-facebook-circle'></i> Facebook</a>
+                    <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram" class="btn-primary"><i class='bx bxl-instagram-alt'></i> Instagram</a>
+                    <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub" class="btn-primary"><i class='bx bxl-github'></i> GitHub</a>
+                </div>
+                
+                <div class="btn-box" style="margin-top: 16px;">
+                    <a href="#about" class="btn-primary">Enter Site!</a>
+                </div>
 
-            <div class="home-img-wrapper">
-                <div class="vertical-text">Computer Engineering</div>
-                <img src="images/pic.png" alt="Ian Carl Solana profile photo" class="home-img">
+                <!-- Banana Cat Easter Egg -->
+                <div class="banana-cat-track">
+                    <img src="images/banana-cat.gif" alt="Banana Cat" class="banana-cat">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+
+    <hr class="hr-groove">
 
     <!-- ===================== ABOUT SECTION ===================== -->
-    <section id="about" class="about animate-section">
-        <div class="about-container">
-            <div class="about-img-wrapper">
-                <img src="images/isa.png" alt="Ian Solana profile" class="about-img">
+    <section id="about" class="window bevel-outset">
+        <div class="title-bar">
+            <span class="title-bar-text">About_Me.txt</span>
+            <div class="title-bar-controls">
+                <button class="window-btn">_</button>
+                <button class="window-btn">☐</button>
+                <button class="window-btn">X</button>
             </div>
+        </div>
+        
+        <div class="window-content white-bg">
+            <div class="about-grid">
+                <div class="about-img-wrapper bevel-inset" style="padding: 4px; max-height: 250px;">
+                    <img src="images/isa.png" alt="Ian Solana profile" class="about-img" style="height: 100%; object-fit: cover;">
+                </div>
+                
+                <div class="about-content">
+                    <h1 class="text-3d">Curated Excellence</h1>
+                    <p>I'm a student at Mapúa Malayan Colleges Mindanao, born on February 14, 2004. I love playing guitar—there's something about expressing myself through music that really resonates with me. The way I can create melodies and chords reflects how I see the world, and it's a hobby that helps me unwind and find balance amidst the demands of school.</p>
+                    
+                    <div class="hit-counter">
+                        Visitors: 0001997 | Since 1995
+                    </div>
 
-            <div class="about-content">
-                <h3>The Story</h3>
-                <h1>Curated <span class="italic">Excellence</span></h1>
-                <p class="drop-cap">I'm a student at Mapúa Malayan Colleges Mindanao, born on February 14, 2004. I love playing guitar—there's something about expressing myself through music that really resonates with me. The way I can create melodies and chords reflects how I see the world, and it's a hobby that helps me unwind and find balance amidst the demands of school.</p>
-                <div class="btn-box">
-                    <a href="assets/Ian_Carl_Solana_Resume.pdf" download="Ian_Carl_Solana_Resume" class="btn-primary">
-                        <span class="btn-text">Download CV</span>
-                        <span class="btn-overlay"></span>
-                    </a>
+                    <div class="btn-box" style="margin-top: 16px;">
+                        <a href="assets/Ian_Carl_Solana_Resume.pdf" download="Ian_Carl_Solana_Resume" class="btn-primary">Download CV.doc</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
 
+    <hr class="hr-groove">
+
     <!-- ===================== EXPERIENCE SECTION ===================== -->
-    <section id="projects" class="experience animate-section">
-        <div class="experience-content">
-            <div class="section-header">
-                <h1>My <span class="italic">Experience</span></h1>
+    <section id="projects" class="window bevel-outset">
+        <div class="title-bar">
+            <span class="title-bar-text">Experience_Database.mdb</span>
+            <div class="title-bar-controls">
+                <button class="window-btn">_</button>
+                <button class="window-btn">☐</button>
+                <button class="window-btn">X</button>
             </div>
+        </div>
+        
+        <div class="window-content yellow-bg">
 
             <nav class="nav-experience" aria-label="Experience tabs">
                 <a href="#education"   id="education-link">Education</a>
@@ -546,13 +561,20 @@
         </div>
     </section>
 
+    <hr class="hr-groove">
 
     <!-- ===================== PROJECTS SECTION ===================== -->
-    <section id="project" class="projects animate-section">
-        <div class="projects-content">
-            <div class="section-header">
-                <h1>Selected <span class="italic">Works</span></h1>
+    <section id="project" class="window bevel-outset">
+        <div class="title-bar">
+            <span class="title-bar-text">Selected_Works.exe</span>
+            <div class="title-bar-controls">
+                <button class="window-btn">_</button>
+                <button class="window-btn">☐</button>
+                <button class="window-btn">X</button>
             </div>
+        </div>
+        
+        <div class="window-content white-bg">
             <p>A curated collection of projects from my academic journey.</p>
 
             <div class="project-boxes">
@@ -684,47 +706,74 @@
             </div>
         </div>
     </section>
-
+    
+    <hr class="hr-groove">
 
     <!-- ===================== PROJECT MODAL ===================== -->
     <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-            <span class="close-modal" role="button" aria-label="Close modal">&times;</span>
-            <h2 id="modalTitle"></h2>
-            <span id="modalRole" style="display:block; margin: 10px 0; font-weight:bold; color: rgb(41, 126, 206); font-size:11px; text-transform:uppercase; letter-spacing:2px;"></span>
-            <div id="modalGallery" class="modal-gallery"></div>
-            <div id="modalTableContainer" class="modal-table-container"></div>
-            <p id="modalDesc"></p>
+        <div class="modal-content window bevel-outset">
+            <div class="title-bar">
+                <span class="title-bar-text">Project_Details.exe</span>
+                <div class="title-bar-controls">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">☐</button>
+                    <button class="window-btn close-modal" aria-label="Close modal">X</button>
+                </div>
+            </div>
+            <div class="window-content white-bg">
+                <h2 id="modalTitle" class="text-3d"></h2>
+                <span id="modalRole" style="display:block; margin: 10px 0; font-weight:bold; color: var(--color-link); font-size:11px; text-transform:uppercase; letter-spacing:2px;"></span>
+                <div id="modalGallery" class="modal-gallery"></div>
+                <div id="modalTableContainer" class="modal-table-container"></div>
+                <p id="modalDesc"></p>
+            </div>
         </div>
     </div>
 
     <!-- ===================== CERTIFICATE FLOATING VIEWER ===================== -->
     <div id="certViewer" class="cert-viewer" role="dialog" aria-modal="true">
-        <div class="cert-viewer-card">
-            <button class="cert-viewer-close" onclick="closeCertViewer()" aria-label="Close certificate viewer">
-                <i class='bx bx-x'></i>
-            </button>
-            <img id="certViewerImg" src="" alt="Certificate" class="cert-viewer-img">
-            <div class="cert-viewer-caption">
-                <p id="certViewerName" class="cert-viewer-name"></p>
-                <p id="certViewerID"   class="cert-viewer-id"></p>
-                <p id="certViewerDate" class="cert-viewer-date"></p>
+        <div class="cert-viewer-card window bevel-outset">
+            <div class="title-bar">
+                <span class="title-bar-text">Certificate_Viewer.exe</span>
+                <div class="title-bar-controls">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">☐</button>
+                    <button class="window-btn cert-viewer-close" onclick="closeCertViewer()" aria-label="Close certificate viewer">X</button>
+                </div>
+            </div>
+            <div class="window-content white-bg">
+                <img id="certViewerImg" src="" alt="Certificate" class="cert-viewer-img">
+                <div class="cert-viewer-caption">
+                    <p id="certViewerName" class="cert-viewer-name" style="font-weight: bold;"></p>
+                    <p id="certViewerID"   class="cert-viewer-id" style="font-family: var(--font-mono);"></p>
+                    <p id="certViewerDate" class="cert-viewer-date" style="font-family: var(--font-mono); color: var(--color-muted);"></p>
+                </div>
             </div>
         </div>
     </div>
 
+    </div> <!-- Close .container -->
+
+    <hr class="hr-groove">
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="window bevel-outset" style="margin: 0 var(--space-md) var(--space-xl) var(--space-md);">
+        <div class="title-bar">
+            <span class="title-bar-text">Footer.sys</span>
+        </div>
+        <div class="window-content yellow-bg footer-content">
+            <p style="font-family: var(--font-mono); font-weight: bold;">&copy; 1997 Ian Carl Solana</p>
+            <div class="footer-sci">
+                <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            </div>
+            <div class="hit-counter" style="margin-top: 8px;">
+                Visitors: 0001997
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-
-<!-- ===================== FOOTER ===================== -->
-<footer>
-    <div class="footer-content animate-footer">
-        <p>&copy; 2025 Ian Carl Solana</p>
-        <div class="footer-sci">
-            <a href="https://web.facebook.com/ian.solana.35" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
-            <a href="https://www.instagram.com/solyoursolution/" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
-            <a href="https://github.com/Edge-html" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-        </div>
-    </div>
-</footer>
 </html>
