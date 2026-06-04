@@ -223,6 +223,15 @@ a:hover {
 .nav-bar a { text-decoration: none; }
 .nav-bar a:hover { color: var(--color-accent); }
 
+.nav-experience {
+  display: flex;
+  gap: 24px;
+  padding: 16px;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 /* Strict Grid Structures */
 .grid-container {
   display: grid;
