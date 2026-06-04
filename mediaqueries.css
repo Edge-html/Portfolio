@@ -1,491 +1,162 @@
 /* ============================================================
-   MEDIAQUERIES.CSS — Mobile-First Responsive Overrides
-   Breakpoints:
-     xs   (Mobile)        : ≤ 480px
-     sm   (Large Mobile)  : 481px – 600px
-     md   (Tablet)        : 601px – 900px
-     lg   (Laptop 14")    : 901px – 1100px
-     xl   (Laptop 15–16") : 1101px – 1400px
-     2xl  (Desktop)       : > 1400px ← default in Main.css
+   MEDIAQUERIES.CSS — Luxury / Editorial Responsive Adjustments
    ============================================================ */
 
 /* ============================================================
-   HAMBURGER BUTTON — hidden on desktop by default
+   TABLET (Max 1024px)
    ============================================================ */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
-  cursor: pointer;
-  background: var(--color-accent-subtle);
-  border: 1px solid var(--color-border-accent);
-  border-radius: var(--radius-md);
-  transition: var(--transition-base);
-  z-index: 1100;
-  flex-shrink: 0;
-}
-
-.hamburger:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-}
-
-.hamburger span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: var(--color-text-primary);
-  border-radius: 2px;
-  transition: var(--transition-base);
-}
-
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* Nav overlay (JS-injected) */
-.nav-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1040;
-  backdrop-filter: blur(2px);
-  cursor: pointer;
-}
-.nav-overlay.open { display: block; }
-
-/* ============================================================
-   DESKTOP 1400px+ — subtle size boosts
-   ============================================================ */
-@media (min-width: 1400px) {
-  :root {
-    --hero-img-size:  480px;
-    --about-img-size: 420px;
-  }
-}
-
-/* ============================================================
-   LAPTOP 15–16" — 1101px to 1400px
-   ============================================================ */
-@media (max-width: 1400px) {
-  :root {
-    --hero-img-size:  400px;
-    --about-img-size: 360px;
-  }
-
-  .project-boxes {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ============================================================
-   LAPTOP 14" — 901px to 1100px
-   Tighten the split-screen; images scale down.
-   ============================================================ */
-@media (max-width: 1100px) {
-  :root {
-    --hero-img-size:  320px;
-    --about-img-size: 300px;
-  }
-
-  /* Reduce padding on smaller laptop screens */
-  #home,
-  #about {
-    padding-left: clamp(20px, 5%, 60px);
-    padding-right: clamp(20px, 5%, 60px);
-    gap: var(--space-lg);
-  }
-
-  .project-boxes {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .education-box {
-    flex: 1 1 180px;
-    max-width: 220px;
-  }
-
-  /* Navbar links: reduce gap on tighter viewports */
-  .navbar a {
-    margin-left: 24px;
-    font-size: 13px;
-  }
-}
-
-/* ============================================================
-   TABLET — 601px to 900px
-   Switch split-screen to vertical stack; show hamburger.
-   ============================================================ */
-@media (max-width: 900px) {
-
-  /* --- HEADER --- */
+@media (max-width: 1024px) {
   .header {
-    padding: 14px 24px;
+    padding: 24px 32px;
+  }
+  
+  .header.scrolled {
+    padding: 16px 32px;
   }
 
+  /* Gridlines */
+  .gridlines {
+    padding: 0 32px;
+  }
+
+  /* Sections */
+  #home, #about, #projects, #project {
+    padding: 96px 32px 48px;
+  }
+  
+  /* Home */
+  .home-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .home-img-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .home-content h1 {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  /* About */
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .about-img-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .about-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  /* Lists */
+  .boxes-container, .skills-container, .work-container, .certificates-container, .project-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .education-box, .skills-box, .work-box, .certificate-box, .project-box {
+    width: 100%;
+  }
+
+  /* Footer */
+  footer {
+    padding: 48px 32px;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   MOBILE (Max 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  
+  /* Navbar / Hamburger */
   .hamburger {
     display: flex;
   }
-
-  /* Slide-in mobile nav */
+  
   .navbar {
-    display: none;
+    display: none; /* Hide for slide-in menu logic if it exists in script.js */
     flex-direction: column;
     position: fixed;
     top: 0;
     right: 0;
-    width: min(280px, 80vw);
+    width: 280px;
     height: 100vh;
-    background: rgba(6, 15, 26, 0.97);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border-left: 1px solid var(--color-border-glass);
-    padding: 80px 32px 40px;
-    gap: var(--space-md);
+    background: var(--color-bg-primary);
+    border-left: 1px solid var(--color-border-subtle);
+    padding: 80px 32px;
+    gap: 24px;
     z-index: 1050;
-    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.6);
     transform: translateX(100%);
-    transition: transform var(--transition-slow), opacity var(--transition-slow);
-    opacity: 0;
   }
 
   .navbar.open {
     display: flex;
     transform: translateX(0);
-    opacity: 1;
   }
 
-  .navbar a {
-    font-size: 16px;
-    margin-left: 0;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--color-border-glass);
-    color: var(--color-text-primary);
+  /* Home */
+  .home-content h1 {
+    font-size: 3rem;
   }
-  .navbar a:last-child { border-bottom: none; }
-
-  /* --- HOME SECTION — stack vertically --- */
-  #home {
-    flex-direction: column-reverse; /* image on top, text below */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 110px clamp(20px, 6%, 48px) 60px;
-    gap: var(--space-lg);
-    min-height: 100vh;
+  .home-content .decorative-line {
+    width: 32px;
   }
 
-  .home-img-wrapper {
-    flex: 0 0 auto;
-    width: 200px;
-    height: 200px;
+  /* About */
+  .about-content h1 {
+    font-size: 2.5rem;
+  }
+  .about-content .drop-cap::first-letter {
+    font-size: 5rem;
   }
 
-  .home-content {
-    max-width: 100%;
-    align-items: center;
-    text-align: center;
+  /* Gridlines */
+  .gridlines {
+    padding: 0 16px;
   }
 
-  .home-content p {
-    text-align: left;
-    max-width: 100%;
+  /* Sections */
+  #home, #about, #projects, #project {
+    padding: 80px 24px 40px;
   }
 
-  .home-sci { justify-content: center; }
-  .btn-box  { justify-content: center; }
-
-  /* --- ABOUT SECTION — stack vertically --- */
-  #about {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 100px clamp(20px, 6%, 48px) 60px;
-    gap: var(--space-lg);
-    min-height: auto;
+  .section-header h1 {
+    font-size: 2.5rem;
   }
 
-  .about-img-wrapper {
-    flex: 0 0 auto;
-    width: 180px;
-    height: 180px;
+  /* Nav Experience */
+  .nav-experience {
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
-  .about-content {
-    max-width: 100%;
-    align-items: center;
-    text-align: center;
-    padding: 28px 24px;
+  .project-box h4 {
+    font-size: 24px;
   }
 
-  .about-content p {
-    text-align: left;
+  /* Modal */
+  .modal {
+    padding: 24px 16px;
   }
-
-  .about-content .btn-box {
-    justify-content: center;
-    width: 100%;
+  .close-modal {
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
   }
-
-  /* --- EXPERIENCE SECTION --- */
-  .experience-content { padding: 0 var(--space-md); }
-
-  .boxes-container,
-  .skills-container,
-  .work-container {
-    flex-direction: column;
-    align-items: center;
+  #modalTitle {
+    font-size: 2rem;
   }
-
-  .education-box {
-    flex: none;
-    width: min(400px, 100%);
-    max-width: 100%;
-  }
-
-  .skills-box,
-  .work-box {
-    flex: none;
-    width: min(500px, 100%);
-    max-width: 100%;
-  }
-
-  /* --- PROJECT GRID --- */
-  .project-boxes {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
-  }
-
-  /* --- BANANA CAT --- */
-  .banana-cat-track {
-    bottom: 10px;
-    z-index: 10;
-  }
-  .banana-cat {
-    width: 60px;
-    opacity: 0.6;
-  }
-
-  /* --- FOOTER --- */
-  .footer-content {
-    flex-direction: column;
-    gap: var(--space-md);
-    text-align: center;
-  }
-  .footer-sci { justify-content: center; }
-}
-
-/* ============================================================
-   LARGE MOBILE — 481px to 600px
-   Single-column projects, tighten spacing.
-   ============================================================ */
-@media (max-width: 600px) {
-  :root {
-    --hero-img-size:  180px;
-    --about-img-size: 160px;
-  }
-
-  .project-boxes {
+  .modal-gallery {
     grid-template-columns: 1fr;
   }
-
-  .home-img-wrapper,
-  .about-img-wrapper {
-    width: var(--hero-img-size);
-    height: var(--hero-img-size);
-  }
-
-  /* Experience pill nav: wrap gracefully */
-  .nav-experience {
-    border-radius: var(--radius-lg);
-    flex-wrap: wrap;
-    padding: var(--space-xs);
-    width: auto;
-    max-width: 100%;
-  }
-
-  .nav-experience a {
-    font-size: 13px;
-    padding: 7px 14px;
-  }
-
-  /* Certificate boxes: full width */
-  .certificate-box {
-    flex: none;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Modal adjustments */
-  .modal { padding: 20px 12px; }
-  .modal-content {
-    padding: 28px 20px;
-    width: 100%;
-    border-radius: var(--radius-lg);
-  }
-  .gallery-img {
-    width: 100%;
-    height: auto;
-    max-height: 220px;
-  }
-}
-
-/* ============================================================
-   MOBILE — up to 480px
-   Maximum simplification.
-   ============================================================ */
-@media (max-width: 480px) {
-  :root {
-    --hero-img-size:  150px;
-    --about-img-size: 130px;
-  }
-
-  /* --- HEADER --- */
-  .header { padding: 12px 16px; }
-  .logo   { font-size: 15px; }
-
-  /* --- HOME SECTION --- */
-  #home {
-    padding: 90px 5% 48px;
-    gap: var(--space-md);
-  }
-
-  .home-img-wrapper {
-    width: var(--hero-img-size);
-    height: var(--hero-img-size);
-  }
-
-  .home-content h1 { font-size: clamp(26px, 9vw, 36px); }
-  .home-content h3 { font-size: clamp(13px, 4.5vw, 16px); }
-  .home-content p  { font-size: 13px; }
-
-  .btn-box {
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    gap: var(--space-sm);
-  }
-
-  .btn-box a {
-    width: 100%;
-    height: 46px;
-    font-size: 13px;
-  }
-
-  /* --- ABOUT --- */
-  #about {
-    padding: 70px 5% 48px;
-  }
-
-  .about-img-wrapper {
-    width: var(--about-img-size);
-    height: var(--about-img-size);
-  }
-
-  .about-content {
-    padding: 20px 16px;
-    gap: var(--space-md);
-  }
-
-  .about-content h1 { font-size: clamp(20px, 7vw, 28px); }
-  .about-content h3 { font-size: 16px; }
-  .about-content p  { font-size: 13px; }
-
-  /* --- EXPERIENCE --- */
-  .experience-content h1,
-  .projects-content h1 {
-    font-size: clamp(26px, 8vw, 38px);
-  }
-
-  .education-box,
-  .skills-box,
-  .work-box {
-    width: 100%;
-    min-width: unset;
-    padding: var(--space-md);
-  }
-
-  .education-box h2,
-  .skills-box h2,
-  .work-box h2 {
-    font-size: 14px;
-  }
-
-  .badges { gap: 4px; }
-  .badge  { font-size: 11px; padding: 4px 10px; }
-
-  /* --- PROJECTS --- */
-  .project-boxes {
-    gap: var(--space-md);
-    padding: 0;
-  }
-
-  .project-box {
-    padding: var(--space-md);
-    min-height: 160px;
-  }
-
-  .project-box h4 { font-size: 14px; }
-
-  /* --- BANANA CAT: hidden on smallest screens --- */
-  .banana-cat-track { display: none; }
-
-  /* --- SOCIAL ICONS --- */
-  .home-sci a,
-  .footer-sci a {
-    width: 38px;
-    height: 38px;
-    font-size: 16px;
-  }
-
-  /* --- MODAL --- */
-  .modal { padding: 12px 8px; }
-  .modal-content {
-    padding: 20px 14px;
-    border-radius: var(--radius-md);
-  }
-
-  #modalTitle {
-    font-size: 16px;
-    padding-right: 32px;
-  }
-
-  .modal-gallery {
-    padding: var(--space-sm);
-    gap: var(--space-xs);
-  }
-
-  .gallery-img {
-    width: 100%;
-    height: auto;
-    max-height: 180px;
-  }
-
-  #modalDesc {
-    font-size: 13px;
-    padding: var(--space-sm) var(--space-md);
-  }
-
-  .project-data-table th,
-  .project-data-table td {
-    font-size: 11px;
-    padding: 8px 10px;
-  }
-
-  /* --- FOOTER --- */
-  footer { padding: var(--space-lg) var(--space-md); }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-sm);
-  }
-
-  .footer-sci { justify-content: center; }
 }
